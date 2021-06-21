@@ -82,6 +82,12 @@
         </div>
         <h1>The Watch List</h1>
       </div>
+      <div id="search-div">
+        <form action="submit" id="search-form">
+          <input type="text" name="search" id="search" placeholder="search" />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
     </nav>
     <div class="container">
       <div class="image">
@@ -104,12 +110,13 @@
       <div class="action-div">
         <div>Likes: 0</div>
         <div><button>Like</button></div>
-        <div><button>Comments</button></div>
+        <div><button class="comment-button">Comments</button></div>
       </div>
     </div>
     <div class="comments hidden">
+      <h3>Comments:</h3>
       <ul class="comments-list">
-        <li>jflsdfuhasdihflkasd</li>
+        <li>dhsfkljasdkjfhaksdjfklhasdlkfhlasdhfhasdfljkh</li>
         <li>kjhfdskjhfsda</li>
         <li>ihfkjsdhfksd</li>
       </ul>
@@ -123,7 +130,7 @@
         <input type="submit" value="Post" id="submit" />
       </form>
     </div>
-    <div></div>
+    <div id="content"></div>
     <div></div>
 
     <script src="./script.js" defer></script>
