@@ -22,11 +22,7 @@
         {
           "adult": false,
           "backdrop_path": "/jILeJ60zPpIjjJHGSmIeY4eO30t.jpg",
-          "genre_ids": [
-            28,
-            18,
-            12
-          ],
+          "genre_ids": [28, 18, 12],
           "id": 744,
           "original_language": "en",
           "original_title": "Top Gun",
@@ -42,9 +38,7 @@
         {
           "adult": false,
           "backdrop_path": "/2DwSRqFuqZoGqbJVkuAFsulYVQA.jpg",
-          "genre_ids": [
-            35
-          ],
+          "genre_ids": [35],
           "id": 539617,
           "original_language": "en",
           "original_title": "Big Time Adolescence",
@@ -60,11 +54,7 @@
         {
           "adult": false,
           "backdrop_path": "/jILeJ60zPpIjjJHGSmIeY4eO30t.jpg",
-          "genre_ids": [
-            28,
-            18,
-            12
-          ],
+          "genre_ids": [28, 18, 12],
           "id": 744,
           "original_language": "en",
           "original_title": "Top Gun",
@@ -80,13 +70,7 @@
         {
           "adult": false,
           "backdrop_path": "/4s2d3xdyqotiVNHTlTlJjrr3q0H.jpg",
-          "genre_ids": [
-            12,
-            10751,
-            16,
-            28,
-            35
-          ],
+          "genre_ids": [12, 10751, 16, 28, 35],
           "id": 177572,
           "original_language": "en",
           "original_title": "Big Hero 6",
@@ -100,50 +84,6 @@
           "vote_count": 12792
         }
       ]
-    }
-  ],
-  "myList": [
-    {
-      "adult": false,
-      "backdrop_path": "/jILeJ60zPpIjjJHGSmIeY4eO30t.jpg",
-      "genre_ids": [
-        28,
-        18,
-        12
-      ],
-      "id": 744,
-      "original_language": "en",
-      "original_title": "Top Gun",
-      "overview": "A heart-pounding combination of action, music and incredible aerial photography helped make Top Gun the blockbuster hit. of 1986. Top Gun takes a look at the danger and excitement that awaits every pilot at the Navy's prestigious fighter weapons school. Tom Cruise is superb as Lt. Pete \"Maverick\" Mitchell, a daring young flyer who's out to become the best. And Kelly McGillis sizzles as the civilian instructor who teaches Maverick a few things you can't learn in a classroom.",
-      "popularity": 24.739,
-      "poster_path": "/xUuHj3CgmZQ9P2cMaqQs4J0d4Zc.jpg",
-      "release_date": "1986-05-16",
-      "title": "Top Gun",
-      "video": false,
-      "vote_average": 7,
-      "vote_count": 4779
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/dGbBnTYxdHf1qyUgHsuFpxn1K4E.jpg",
-      "genre_ids": [
-        14,
-        18,
-        35,
-        10749,
-        10751
-      ],
-      "id": 2280,
-      "original_language": "en",
-      "original_title": "Big",
-      "overview": "When a young boy makes a wish at a carnival machine to be big—he wakes up the following morning to find that it has been granted and his body has grown older overnight. But he is still the same 13-year-old boy inside. Now he must learn how to cope with the unfamiliar world of grown-ups including getting a job and having his first romantic encounter with a woman.",
-      "popularity": 15.039,
-      "poster_path": "/nTY8Zmv7mpumDfzide6GSrekAgQ.jpg",
-      "release_date": "1988-06-03",
-      "title": "Big",
-      "video": false,
-      "vote_average": 7.1,
-      "vote_count": 2606
     }
   ]
 }
