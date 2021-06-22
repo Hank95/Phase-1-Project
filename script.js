@@ -36,58 +36,54 @@ function renderMovie(movie) {
   const movieTitle = document.createElement("h2");
   movieTitle.textContent = movie.original_title;
   const movieDescription = document.createElement("h3");
-  movieDescription.textContent = "Description";
+  movieDescription.textContent = "Description:";
   const movieDescriptionContent = document.createElement("p");
   movieDescriptionContent.textContent = movie.overview;
   divDetails.append(movieTitle, movieDescription, movieDescriptionContent);
   const actionDiv = document.createElement("div");
   actionDiv.className = "action-div";
   const listButtonDiv = document.createElement("div");
+  listButtonDiv.className = "list-button";
   const listButton = document.createElement("button");
   listButton.textContent = "Add to Watch List";
   listButton.className = "list-button";
   listButtonDiv.append(listButton);
   actionDiv.append(listButtonDiv);
-
+  console.log(listButton)
   container.append(divImage, divDetails, actionDiv);
 
-  //   container.innerHTML = `<div class="image">
-  //   <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="placeholder" />
-  // </div>
-  // <div class="details">
-  //   <h2>${movie.original_title}</h2>
-  //   <h3>Description</h3>
-  //   <p>${movie.overview}</p>
-  //   <h3>Genre</h3>
-  //   <p></p>
-  //   <h3>Where To Watch</h3>
-  //   <a href="https://www.netflix.com/">Netflix</a>
-  // </div>
-  // <div class="action-div">
-  //   <div>Likes: 0</div>
-  //   <div><button>Like</button></div>
-  //   <div><button class="comment-button">Comments</button></div>
-  // </div>
-  // </div>
-  // <div class="comments hidden">
-  // <h3>Comments:</h3>
-  // <ul class="comments-list">
-  //   <li>dhsfkljasdkjfhaksdjfklhasdlkfhlasdhfhasdfljkh</li>
-  //   <li>kjhfdskjhfsda</li>
-  //   <li>ihfkjsdhfksd</li>
-  // </ul>
-  // <form class="comment-form" action="submit">
-  //   <input
-  //     type="text"
-  //     name="commment"
-  //     id="comment"
-  //     placeholder="Some whitty remark"
-  //   />
-  //   <input type="submit" value="Post" id="submit" />
-  // </form>
-  // </div>`;
-
   content.append(container);
+
+  listButton.addEventListener("click", (e) => {
+    addToList(movie, e);
+  });
+}
+
+function addToList(movie, e) {
+  console.log(movie);
+  console.log(e);
+  fetch(`http://localhost:3000/profile/1`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      console.log(list);
+    });
+
+  // let movieData = movie;
+  // fetch(`http://localhost:3000/myList`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(movieData),
+  // })
+  //   .then((res) => res.json())
+  //   .then((json) => console.log(json));
+}
+
+function addToMyListArr(json) {
+  const list = json.myList;
+  console.log(list);
 }
 
 const comments = document.querySelector(".comments");
@@ -111,3 +107,35 @@ searchForm.addEventListener("submit", (e) => {
   console.log(e.target.search.value);
   findMovie(e.target.search.value);
 });
+
+listButton.addEventListener("click", (e) => {
+  addToList(movie, e);
+});
+
+
+function addToList(movie, e) {
+console.log(movie);
+console.log(e);
+fetch(`http://localhost:3000/profile/1`)
+  .then((res) => res.json())
+  .then((json) => {
+    const list = json.myList;
+    console.log(list);
+  });
+
+// let movieData = movie;
+// fetch(`http://localhost:3000/myList`, {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify(movieData),
+// })
+//   .then((res) => res.json())
+//   .then((json) => console.log(json));
+}
+
+function addToMyListArr(json) {
+const list = json.myList;
+console.log(list);
+}
