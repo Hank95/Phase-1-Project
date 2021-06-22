@@ -9,7 +9,7 @@ body {
 }
 nav {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   width: 100%;
 }
 
@@ -37,6 +37,13 @@ h3 {
   border: 0;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
+.my-list {
+  justify-content: center;
+  text-align: center;
+}
+.my-list h3 {
+  margin-top: 20px;
+}
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -44,6 +51,9 @@ h3 {
 }
 .image {
   object-fit: fill;
+}
+.details {
+  margin: 1.5rem;
 }
 .action-div {
   position: absolute;
@@ -54,6 +64,10 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 1rem;
   height: 2rem;
+}
+.list-button {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }
 .comments {
   width: 100%;
