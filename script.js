@@ -66,24 +66,18 @@ function addToList(movie, e) {
     .then((res) => res.json())
     .then((json) => {
       const list = json.myList;
+      list.push(movie);
       console.log(list);
+      fetch(`http://localhost:3000/profile/1`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          myList: list,
+        }),
+      });
     });
-
-  // let movieData = movie;
-  // fetch(`http://localhost:3000/myList`, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(movieData),
-  // })
-  //   .then((res) => res.json())
-  //   .then((json) => console.log(json));
-}
-
-function addToMyListArr(json) {
-  const list = json.myList;
-  console.log(list);
 }
 
 const comments = document.querySelector(".comments");
@@ -107,3 +101,7 @@ searchForm.addEventListener("submit", (e) => {
   console.log(e.target.search.value);
   findMovie(e.target.search.value);
 });
+
+const theList = document.querySelector(".my-list");
+
+theList.addEventListener("click", e);
