@@ -76,6 +76,28 @@
           "video": false,
           "vote_average": 7,
           "vote_count": 4779
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/4s2d3xdyqotiVNHTlTlJjrr3q0H.jpg",
+          "genre_ids": [
+            12,
+            10751,
+            16,
+            28,
+            35
+          ],
+          "id": 177572,
+          "original_language": "en",
+          "original_title": "Big Hero 6",
+          "overview": "The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
+          "popularity": 96.575,
+          "poster_path": "/2mxS4wUimwlLmI1xp6QW6NSU361.jpg",
+          "release_date": "2014-10-24",
+          "title": "Big Hero 6",
+          "video": false,
+          "vote_average": 7.8,
+          "vote_count": 12792
         }
       ]
     }
