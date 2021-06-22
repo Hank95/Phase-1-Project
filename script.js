@@ -62,17 +62,28 @@ function renderMovie(movie) {
 function addToList(movie, e) {
   console.log(movie);
   console.log(e);
-  fetch(`http://localhost:3000/profile/1`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      myList: movieData,
-    }),
-  })
+  fetch(`http://localhost:3000/profile/1`)
     .then((res) => res.json())
-    .then((json) => console.log(json));
+    .then((json) => {
+      const list = json.myList;
+      console.log(list);
+    });
+
+  // let movieData = movie;
+  // fetch(`http://localhost:3000/myList`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(movieData),
+  // })
+  //   .then((res) => res.json())
+  //   .then((json) => console.log(json));
+}
+
+function addToMyListArr(json) {
+  const list = json.myList;
+  console.log(list);
 }
 
 const comments = document.querySelector(".comments");
