@@ -20,7 +20,7 @@ function renderMovie(movie) {
   const container = document.createElement("div");
   container.className = "container";
   container.innerHTML = `<div class="image">
-  <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="placeholder" />
+  <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="placeholder" />
 </div>
 <div class="details">
   <h2>${movie.original_title}</h2>
