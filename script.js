@@ -80,19 +80,6 @@ function addToList(movie, e) {
     });
 }
 
-const comments = document.querySelector(".comments");
-const commentButton = document.querySelector(".comment-button");
-let openComments = false;
-
-commentButton.addEventListener("click", (e) => {
-  openComments = !openComments;
-  if (openComments) {
-    comments.classList.add("hidden");
-  } else {
-    comments.classList.remove("hidden");
-  }
-});
-
 const searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -102,6 +89,22 @@ searchForm.addEventListener("submit", (e) => {
   findMovie(e.target.search.value);
 });
 
-const theList = document.querySelector(".my-list");
+const theList = document.querySelector("#the-list");
 
-theList.addEventListener("click", e);
+function currentMovies() {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+  )
+    .then((res) => res.json())
+    .then((json) => json.results.forEach((newMovie) => renderMovie(newMovie)));
+}
+
+const current = document.querySelector("#current");
+
+current.addEventListener("click", () => {
+  const test = document.getElementById("content");
+  test.textContent = "";
+  console.log(test);
+
+  currentMovies();
+});
