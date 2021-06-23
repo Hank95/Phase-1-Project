@@ -18,16 +18,11 @@
     />
   </head>
   <body>
-    <!-- <nav> -->
-
-    <div id="logo">
-      <div></div>
-    </div>
     <aside>
       <div class="my-list">
-        <h1>THE WATCH LIST</h1>
+        <h1 id="main-title">THE WATCH LIST</h1>
         <button id="the-list"><h3>My List</h3></button>
-        <button id="current"><h3>Currently Out</h3></button>
+        <button id="current"><h3>Popular</h3></button>
       </div>
       <div id="search-div">
         <form action="submit" id="search-form">
@@ -36,50 +31,12 @@
         </form>
       </div>
     </aside>
-    <!-- </nav> -->
-    <div class="container hidden">
-      <div class="image">
-        <img src="./images/forrest_gump.jpeg" alt="placeholder" />
-      </div>
-      <div class="details">
-        <h2>Forrest Gump</h2>
-        <h3>Description</h3>
-        <p>
-          The presidencies of Kennedy and Johnson, the Vietnam War, the
-          Watergate scandal and other historical events unfold from the
-          perspective of an Alabama man with an IQ of 75, whose only desire is
-          to be reunited with his childhood sweetheart.
-        </p>
-        <h3>Genre</h3>
-        <p>Drama</p>
-        <h3>Where To Watch</h3>
-        <a href="https://www.netflix.com/">Netflix</a>
-      </div>
-      <div class="action-div">
-        <div>Likes: 0</div>
-        <div><button>Like</button></div>
-        <div><button class="comment-button">Comments</button></div>
-      </div>
-    </div>
-    <div class="comments hidden">
-      <h3>Comments:</h3>
-      <ul class="comments-list">
-        <li>dhsfkljasdkjfhaksdjfklhasdlkfhlasdhfhasdfljkh</li>
-        <li>kjhfdskjhfsda</li>
-        <li>ihfkjsdhfksd</li>
-      </ul>
-      <form class="comment-form" action="submit">
-        <input
-          type="text"
-          name="commment"
-          id="comment"
-          placeholder="Some whitty remark"
-        />
-        <input type="submit" value="Post" id="submit" />
-      </form>
+    <div id="title">
+      <h2>Welcome to the Watch List!</h2>
+      <h4>Check out some of popular movies and start adding to your list!</h4>
     </div>
     <div id="content"></div>
-    <div id="test"></div>
+    <div id="list-container"></div>
 
     <script src="./script.js" defer></script>
   </body>
