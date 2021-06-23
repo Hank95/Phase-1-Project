@@ -225,27 +225,6 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/jFs3RF8Khp07o1rsJ3ccW6Pa2uR.jpg",
-          "genre_ids": [
-            35,
-            10751,
-            18
-          ],
-          "id": 20737,
-          "original_language": "en",
-          "original_title": "Air Bud",
-          "overview": "A lonely boy befriends a stray dog who has a natural talent for basketball and together they experience the highs and lows of life as their friendship remains solid through a series of escapades.",
-          "popularity": 9.442,
-          "poster_path": "/kDfzh6QdX2tseTwwyB7lp2RP7iE.jpg",
-          "release_date": "1997-08-01",
-          "title": "Air Bud",
-          "video": false,
-          "vote_average": 5.5,
-          "vote_count": 324,
-          "dateAdded": "6/22/2021"
-        },
-        {
-          "adult": false,
           "backdrop_path": "/5eF15LDV6cO7PePJL1e1OjbkGD3.jpg",
           "genre_ids": [
             35,
@@ -302,25 +281,6 @@
           "title": "Top Gun",
           "video": false,
           "vote_average": 6,
-          "vote_count": 3,
-          "dateAdded": "6/22/2021"
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/pLrVfnhf0N6l2z0qD081xofydGt.jpg",
-          "genre_ids": [
-            99
-          ],
-          "id": 94026,
-          "original_language": "en",
-          "original_title": "Bert Stern: Original Madman",
-          "overview": "The untold and intimate life story of one of the greatest American photographers of all time, Bert Stern. After working alongside Stanley Kubrick at Look Magazine, Stern became an original Madison Avenue 'mad man', his images helping to create modern advertising. Ground-breaking photos of Elizabeth Taylor and Richard Burton, Marilyn Monroe and Twiggy, coupled with his astonishing success in advertising, minted Stern as a celebrity in his own right.",
-          "popularity": 3.234,
-          "poster_path": "/uF8uAzu8aMQwAGFOPNhLeFzsOhh.jpg",
-          "release_date": "2011-09-02",
-          "title": "Bert Stern: Original Madman",
-          "video": false,
-          "vote_average": 8,
           "vote_count": 3,
           "dateAdded": "6/22/2021"
         },
@@ -408,72 +368,6 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
-          "id": 508943,
-          "original_language": "en",
-          "original_title": "Luca",
-          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
-          "popularity": 3668.188,
-          "poster_path": "/jTswp6KyDYKtvC52GbHagrZbGvD.jpg",
-          "release_date": "2021-06-17",
-          "title": "Luca",
-          "video": false,
-          "vote_average": 8.3,
-          "vote_count": 858,
-          "dateAdded": "6/23/2021"
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
-          "id": 508943,
-          "original_language": "en",
-          "original_title": "Luca",
-          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
-          "popularity": 3668.188,
-          "poster_path": "/jTswp6KyDYKtvC52GbHagrZbGvD.jpg",
-          "release_date": "2021-06-17",
-          "title": "Luca",
-          "video": false,
-          "vote_average": 8.3,
-          "vote_count": 858,
-          "dateAdded": "6/23/2021"
-        },
-        {
-          "adult": false,
-          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
-          "id": 508943,
-          "original_language": "en",
-          "original_title": "Luca",
-          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
-          "popularity": 3668.188,
-          "poster_path": "/jTswp6KyDYKtvC52GbHagrZbGvD.jpg",
-          "release_date": "2021-06-17",
-          "title": "Luca",
-          "video": false,
-          "vote_average": 8.3,
-          "vote_count": 858,
-          "dateAdded": "6/23/2021"
-        },
-        {
-          "adult": false,
           "backdrop_path": "/inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg",
           "genre_ids": [
             14,
@@ -512,6 +406,27 @@
           "video": false,
           "vote_average": 6.4,
           "vote_count": 417,
+          "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5eF15LDV6cO7PePJL1e1OjbkGD3.jpg",
+          "genre_ids": [
+            35,
+            18,
+            10751
+          ],
+          "id": 20755,
+          "original_language": "en",
+          "original_title": "Air Bud: World Pup",
+          "overview": "In this second heartwarming and hilarious sequel to the popular favorite, Air Bud masters two new starring roles: soccer (real football) player and fatherhood. Loaded with laughs and cool soccer action, Buddy teams up alongside U.S. women's soccer greats.",
+          "popularity": 9.249,
+          "poster_path": "/xnoKBYR4CBjYfxT66JPdyXrINoh.jpg",
+          "release_date": "2001-09-16",
+          "title": "Air Bud: World Pup",
+          "video": false,
+          "vote_average": 5,
+          "vote_count": 103,
           "dateAdded": "6/23/2021"
         }
       ]

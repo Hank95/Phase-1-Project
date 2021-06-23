@@ -182,36 +182,27 @@ aside {
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   text-align: center;
   margin: 2rem;
+  z-index: 2;
+  position: relative;
 }
 
 /* myList Delete button */
 .close {
-  position: relative;
-  left: 100px;
-  /* top: 32px; */
-  width: 32px;
-  height: 32px;
-  opacity: 0;
-  color: rgb(196, 23, 23);
-}
-/* .movie-div:hover .close {
-  color: rgb(196, 23, 23);
-  opacity: 1;
-} */
-/* .close:before,
-.close:after {
   position: absolute;
-  left: 15px;
-  content: " ";
-  height: 33px;
-  width: 2px;
-  background-color: rgb(212, 45, 45);
-  border: black;
-  outline-color: black;
+  left: 160px;
+  top: 2px;
+  width: 38px;
+  height: 38px;
+  opacity: 0;
+  color: rgb(0, 0, 0);
+  z-index: 1;
+  font-size: 34px;
+  border-width: 10px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
 }
-.close:before {
-  transform: rotate(45deg);
+.movie-div:hover .close {
+  color: rgb(0, 0, 0);
+  opacity: 1;
 }
-.close:after {
-  transform: rotate(-45deg);
-} */

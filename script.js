@@ -1,14 +1,14 @@
 const API_KEY = "5dd59b3fb5f3ddffe05ee3a3306f88ff";
 let logInID = 1;
-// fetch(
-//   `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=2021&sort_by=popularity.desc`
-// )
-//   .then((res) => res.json())
-//   .then((json) => console.log(json));
+fetch(
+  `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=2021&sort_by=popularity.desc`
+)
+  .then((res) => res.json())
+  .then((json) => console.log(json));
 
-// fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
-//   .then((res) => res.json())
-//   .then((json) => console.log(json));
+fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
+  .then((res) => res.json())
+  .then((json) => console.log(json));
 
 function findMovie(movie) {
   fetch(
@@ -79,16 +79,16 @@ function addToList(movie, e, logInID) {
       movieWDate.dateAdded = today;
       console.log(movieWDate);
       list.push(movie);
-      console.log(list);
-      fetch(`http://localhost:3000/profile/${logInID}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          myList: list,
-        }),
-      });
+      patchList(list);
+      // fetch(`http://localhost:3000/profile/${logInID}`, {
+      //   method: "PATCH",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     myList: list,
+      //   }),
+      // });
     });
 }
 
@@ -98,6 +98,39 @@ function currentMovies() {
   )
     .then((res) => res.json())
     .then((json) => json.results.forEach((newMovie) => renderMovie(newMovie)));
+}
+
+function deleteMovie(movie, e) {
+  console.log(movie);
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let removeIndex = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(removeIndex, 1);
+      patchList(list);
+      //   fetch(`http://localhost:3000/profile/${logInID}`, {
+      //     method: "PATCH",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({
+      //       myList: list,
+      //     }),
+      //   });
+    });
+}
+
+function patchList(list) {
+  fetch(`http://localhost:3000/profile/${logInID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      myList: list,
+    }),
+  });
 }
 const searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", (e) => {
@@ -131,6 +164,7 @@ theList.addEventListener("click", (e) => {
   title.innerHTML = "";
   renderMyList(logInID);
 });
+
 document.addEventListener("DOMContentLoaded", (e) => {
   currentMovies();
 });
@@ -159,7 +193,7 @@ function movieCard(movie) {
   const watchedP = document.createElement("p");
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
-  deleteButton.innerText = "X";
+  deleteButton.innerText = "☓";
   h3.textContent = movie.original_title;
   dateP.textContent = movie.dateAdded;
   ratingP.textContent = `${movie.vote_average}/10`;
@@ -167,9 +201,14 @@ function movieCard(movie) {
 
   movieInfoDiv.append(h3, dateP, ratingP, watchedP);
 
-  movieDiv.append(img, movieInfoDiv);
+  movieDiv.append(deleteButton, img, movieInfoDiv);
 
   listContainer.append(movieDiv);
+
+  deleteButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteMovie(movie, e);
+  });
 }
 
 const mainTitle = document.querySelector("#main-title");
