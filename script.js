@@ -64,9 +64,17 @@ function renderMovie(movie) {
   listButton.addEventListener("click", (e) => {
     e.preventDefault();
     addToList(movie, e, logInID);
+    listButton.textContent = "Added!";
   });
 }
 
+function currentMovies() {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+  )
+    .then((res) => res.json())
+    .then((json) => json.results.forEach((newMovie) => renderMovie(newMovie)));
+}
 function addToList(movie, e, logInID) {
   console.log(movie);
   console.log(e);
@@ -80,24 +88,8 @@ function addToList(movie, e, logInID) {
       console.log(movieWDate);
       list.push(movie);
       patchList(list);
-      // fetch(`http://localhost:3000/profile/${logInID}`, {
-      //   method: "PATCH",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     myList: list,
-      //   }),
-      // });
-    });
-}
-
-function currentMovies() {
-  fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
-  )
-    .then((res) => res.json())
-    .then((json) => json.results.forEach((newMovie) => renderMovie(newMovie)));
+    })
+    .then(e.preventDefault());
 }
 
 function deleteMovie(movie, e) {
@@ -109,15 +101,6 @@ function deleteMovie(movie, e) {
       let removeIndex = list.map((item) => item.id).indexOf(movie.id);
       list.splice(removeIndex, 1);
       patchList(list);
-      //   fetch(`http://localhost:3000/profile/${logInID}`, {
-      //     method: "PATCH",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify({
-      //       myList: list,
-      //     }),
-      //   });
     });
 }
 
@@ -207,7 +190,9 @@ function movieCard(movie) {
 
   deleteButton.addEventListener("click", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     deleteMovie(movie, e);
+    e.target.parentNode.remove();
   });
 }
 
