@@ -6,9 +6,9 @@ let logInID = 1;
 //   .then((res) => res.json())
 //   .then((json) => console.log(json));
 
-fetch(`https://api.themoviedb.org/3/movie/2280/credits?api_key=${API_KEY}&language=en-US`)
-  .then((res) => res.json())
-  .then((json) => console.log(json));
+// fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
+//   .then((res) => res.json())
+//   .then((json) => console.log(json));
 
 function findMovie(movie) {
   fetch(
@@ -16,14 +16,13 @@ function findMovie(movie) {
   )
     .then((res) => res.json())
     .then((json) => {
-      // console.log(json);
+      console.log(json);
       json.results.forEach((movie) => renderMovie(movie));
     });
 }
 const content = document.querySelector("#content");
 
 function renderMovie(movie) {
-  // console.log(movie);
   const container = document.createElement("div");
   container.className = "container";
   const divImage = document.createElement("div");
@@ -57,16 +56,23 @@ function renderMovie(movie) {
   } else if (movie.poster_path === null) {
     image.src = "./images/notFoundPic.jpg";
   }
-  console.log(movie.poster_path);
 
   content.append(container);
 
   listButton.addEventListener("click", (e) => {
     e.preventDefault();
     addToList(movie, e, logInID);
+    listButton.textContent = "Added!";
   });
 }
 
+function currentMovies() {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+  )
+    .then((res) => res.json())
+    .then((json) => json.results.forEach((newMovie) => renderMovie(newMovie)));
+}
 function addToList(movie, e, logInID) {
   console.log(movie);
   console.log(e);
@@ -77,67 +83,66 @@ function addToList(movie, e, logInID) {
       const movieWDate = movie;
       let today = new Date().toLocaleDateString();
       movieWDate.dateAdded = today;
+      movieWDate.watched = false;
       console.log(movieWDate);
       list.push(movie);
-      console.log(list);
-      fetch(`http://localhost:3000/profile/${logInID}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          myList: list,
-        }),
-      });
+      patchList(list);
+    })
+    .then(e.preventDefault());
+}
+
+function deleteMovie(movie, e) {
+  console.log(movie);
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let removeIndex = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(removeIndex, 1);
+      patchList(list);
     });
 }
 
-function currentMovies() {
-  fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
-  )
-    .then((res) => res.json())
-    .then((json) => json.results.forEach((newMovie) => {
-      renderMovie(newMovie)
-    }));   
-
+function patchList(list) {
+  fetch(`http://localhost:3000/profile/${logInID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      myList: list,
+    }),
+  });
 }
-
-
 function getCast() {
   fetch(
     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
   )
     .then((res) => res.json())
-    .then((json) => json.results.forEach((newMovie) => {
-
-      const newMovieID = newMovie.id
-      
-
-      fetch(`https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`)
-      .then((res) => res.json())
-      .then((json) => json.cast.forEach(filmCast => {
-
-        console.log(filmCast)
+    .then((json) =>
+      json.results.forEach((newMovie) => {
+        const newMovieID = newMovie.id;
+        fetch(
+          `https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`
+        )
+          .then((res) => res.json())
+          .then((json) =>
+            json.cast.forEach((filmCast) => {
+              console.log(filmCast);
+            })
+          );
       })
-      
     );
-}))
 }
 
-getCast()
-
-///
+getCast();
 const searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   content.innerHTML = "";
   listContainer.innerHTML = "";
-
-  console.log(e.target.search.value);
   findMovie(e.target.search.value);
 });
-
 
 const theList = document.querySelector("#the-list");
 
@@ -149,7 +154,7 @@ current.addEventListener("click", () => {
   title.innerHTML = "";
 
   const currentTitle = document.createElement("h2");
-  currentTitle.innerText = "POPULAR";
+  currentTitle.innerText = "Popular";
   title.append(currentTitle);
 
   currentMovies();
@@ -161,13 +166,14 @@ theList.addEventListener("click", (e) => {
   title.innerHTML = "";
   renderMyList(logInID);
 });
+
 document.addEventListener("DOMContentLoaded", (e) => {
   currentMovies();
 });
 
 function renderMyList(logInID) {
   const myListTitle = document.createElement("h2");
-  myListTitle.innerText = "MY LIST";
+  myListTitle.innerText = "My List";
   title.append(myListTitle);
   fetch(`http://localhost:3000/profile/${logInID}`)
     .then((res) => res.json())
@@ -187,19 +193,47 @@ function movieCard(movie) {
   const dateP = document.createElement("p");
   const ratingP = document.createElement("p");
   const watchedP = document.createElement("p");
+  const watched = document.createElement("div");
+  watched.className = "button b2 button-10";
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "checkbox";
+  checkbox.name = "checkbox";
+  checkbox.checked = true;
+  const knobs = document.createElement("div");
+  knobs.className = "knobs";
+  const yesSpan = document.createElement("span");
+  yesSpan.innerText = "YES";
+  knobs.append(yesSpan);
+  const layerDiv = document.createElement("div");
+  layerDiv.className = "layer";
+
+  watched.append(checkbox, knobs, layerDiv);
+
+  checkbox.addEventListener("change", (e) => {
+    console.log(e.changed);
+  });
+
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
-  deleteButton.innerText = "X";
+  deleteButton.innerText = "☓";
   h3.textContent = movie.original_title;
   dateP.textContent = movie.dateAdded;
   ratingP.textContent = `${movie.vote_average}/10`;
-  watchedP.textContent = "Watched: yes/no";
+  watchedP.innerText = "Watched?";
 
-  movieInfoDiv.append(h3, dateP, ratingP, watchedP);
+  movieInfoDiv.append(h3, dateP, ratingP, watchedP, watched);
 
-  movieDiv.append(img, movieInfoDiv);
+  movieDiv.append(deleteButton, img, movieInfoDiv);
 
   listContainer.append(movieDiv);
+
+  deleteButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    deleteMovie(movie, e);
+    e.target.parentNode.remove();
+  });
 }
 
 const mainTitle = document.querySelector("#main-title");
@@ -207,3 +241,4 @@ const mainTitle = document.querySelector("#main-title");
 mainTitle.addEventListener("click", () => {
   window.location.reload();
 });
+const checkbox = document.querySelectorAll(".checkbox");

@@ -21,32 +21,8 @@
       "myList": [
         {
           "adult": false,
-          "backdrop_path": "/jILeJ60zPpIjjJHGSmIeY4eO30t.jpg",
-          "genre_ids": [
-            28,
-            18,
-            12
-          ],
-          "id": 744,
-          "original_language": "en",
-          "original_title": "Top Gun",
-          "overview": "A heart-pounding combination of action, music and incredible aerial photography helped make Top Gun the blockbuster hit. of 1986. Top Gun takes a look at the danger and excitement that awaits every pilot at the Navy's prestigious fighter weapons school. Tom Cruise is superb as Lt. Pete \"Maverick\" Mitchell, a daring young flyer who's out to become the best. And Kelly McGillis sizzles as the civilian instructor who teaches Maverick a few things you can't learn in a classroom.",
-          "popularity": 24.739,
-          "poster_path": "/xUuHj3CgmZQ9P2cMaqQs4J0d4Zc.jpg",
-          "release_date": "1986-05-16",
-          "title": "Top Gun",
-          "video": false,
-          "vote_average": 7,
-          "vote_count": 4779,
-          "dateAdded": "6/22/2021"
-        },
-        {
-          "adult": false,
           "backdrop_path": "/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg",
-          "genre_ids": [
-            28,
-            18
-          ],
+          "genre_ids": [28, 18],
           "id": 361743,
           "original_language": "en",
           "original_title": "Top Gun: Maverick",
@@ -63,13 +39,7 @@
         {
           "adult": false,
           "backdrop_path": "/dGbBnTYxdHf1qyUgHsuFpxn1K4E.jpg",
-          "genre_ids": [
-            14,
-            18,
-            35,
-            10749,
-            10751
-          ],
+          "genre_ids": [14, 18, 35, 10749, 10751],
           "id": 2280,
           "original_language": "en",
           "original_title": "Big",
@@ -86,9 +56,7 @@
         {
           "adult": false,
           "backdrop_path": "/vNnRMxksen1cJNl3e0C9Zig4cUf.jpg",
-          "genre_ids": [
-            35
-          ],
+          "genre_ids": [35],
           "id": 1542,
           "original_language": "en",
           "original_title": "Office Space",
@@ -105,10 +73,7 @@
         {
           "adult": false,
           "backdrop_path": "/yka8c9kOHXmJpmFRn01y3lzfB1U.jpg",
-          "genre_ids": [
-            35,
-            14
-          ],
+          "genre_ids": [35, 14],
           "id": 620,
           "original_language": "en",
           "original_title": "Ghostbusters",
@@ -125,11 +90,7 @@
         {
           "adult": false,
           "backdrop_path": "/jILeJ60zPpIjjJHGSmIeY4eO30t.jpg",
-          "genre_ids": [
-            28,
-            18,
-            12
-          ],
+          "genre_ids": [28, 18, 12],
           "id": 744,
           "original_language": "en",
           "original_title": "Top Gun",
@@ -146,10 +107,7 @@
         {
           "adult": false,
           "backdrop_path": "/7Q1SGTuIDkTnKRonEhmYUefQP79.jpg",
-          "genre_ids": [
-            35,
-            12
-          ],
+          "genre_ids": [35, 12],
           "id": 13335,
           "original_language": "en",
           "original_title": "Harold & Kumar Escape from Guantanamo Bay",
@@ -166,11 +124,7 @@
         {
           "adult": false,
           "backdrop_path": "/xN3xKxD6TI87RuGZXsiF1fMjN6Z.jpg",
-          "genre_ids": [
-            12,
-            14,
-            18
-          ],
+          "genre_ids": [12, 14, 18],
           "id": 587,
           "original_language": "en",
           "original_title": "Big Fish",
@@ -187,10 +141,7 @@
         {
           "adult": false,
           "backdrop_path": "/g7yL2pmV45bLogND3eeKmydGh7G.jpg",
-          "genre_ids": [
-            35,
-            18
-          ],
+          "genre_ids": [35, 18],
           "id": 9032,
           "original_language": "en",
           "original_title": "Big Daddy",
@@ -207,9 +158,7 @@
         {
           "adult": false,
           "backdrop_path": "/yp46os3Gf5qOkpDv7rZtxSlP78N.jpg",
-          "genre_ids": [
-            99
-          ],
+          "genre_ids": [99],
           "id": 520091,
           "original_language": "fr",
           "original_title": "TOP GUN 2002",
@@ -226,11 +175,7 @@
         {
           "adult": false,
           "backdrop_path": "/jFs3RF8Khp07o1rsJ3ccW6Pa2uR.jpg",
-          "genre_ids": [
-            35,
-            10751,
-            18
-          ],
+          "genre_ids": [35, 10751, 18],
           "id": 20737,
           "original_language": "en",
           "original_title": "Air Bud",
@@ -247,11 +192,7 @@
         {
           "adult": false,
           "backdrop_path": "/5eF15LDV6cO7PePJL1e1OjbkGD3.jpg",
-          "genre_ids": [
-            35,
-            18,
-            10751
-          ],
+          "genre_ids": [35, 18, 10751],
           "id": 20755,
           "original_language": "en",
           "original_title": "Air Bud: World Pup",
@@ -268,11 +209,7 @@
         {
           "adult": false,
           "backdrop_path": "/1R24pjB7MYzMvYM9JAMPLjdrWyi.jpg",
-          "genre_ids": [
-            35,
-            18,
-            10749
-          ],
+          "genre_ids": [35, 18, 10749],
           "id": 416477,
           "original_language": "en",
           "original_title": "The Big Sick",
@@ -289,9 +226,7 @@
         {
           "adult": false,
           "backdrop_path": "/uwOGuf5q0xxUVEfMCy4ooU1S02M.jpg",
-          "genre_ids": [
-            37
-          ],
+          "genre_ids": [37],
           "id": 243655,
           "original_language": "pt",
           "original_title": "Top Gun",
@@ -308,9 +243,7 @@
         {
           "adult": false,
           "backdrop_path": "/pLrVfnhf0N6l2z0qD081xofydGt.jpg",
-          "genre_ids": [
-            99
-          ],
+          "genre_ids": [99],
           "id": 94026,
           "original_language": "en",
           "original_title": "Bert Stern: Original Madman",
@@ -327,11 +260,7 @@
         {
           "adult": false,
           "backdrop_path": "/k98zx90KvkGmGxJ7inYYmvSHdkV.jpg",
-          "genre_ids": [
-            35,
-            27,
-            28
-          ],
+          "genre_ids": [35, 27, 28],
           "id": 381237,
           "original_language": "en",
           "original_title": "Office Uprising",
@@ -348,9 +277,7 @@
         {
           "adult": false,
           "backdrop_path": "/3tqRm30c1Nbe82xvBOdRhYh0Uet.jpg",
-          "genre_ids": [
-            35
-          ],
+          "genre_ids": [35],
           "id": 11977,
           "original_language": "en",
           "original_title": "Caddyshack",
@@ -367,10 +294,7 @@
         {
           "adult": false,
           "backdrop_path": "/8ChCpCYxh9YXusmHwcE9YzP0TSG.jpg",
-          "genre_ids": [
-            35,
-            80
-          ],
+          "genre_ids": [35, 80],
           "id": 337404,
           "original_language": "en",
           "original_title": "Cruella",
@@ -387,12 +311,7 @@
         {
           "adult": false,
           "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
+          "genre_ids": [16, 35, 10751, 14],
           "id": 508943,
           "original_language": "en",
           "original_title": "Luca",
@@ -409,12 +328,7 @@
         {
           "adult": false,
           "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
+          "genre_ids": [16, 35, 10751, 14],
           "id": 508943,
           "original_language": "en",
           "original_title": "Luca",
@@ -431,12 +345,7 @@
         {
           "adult": false,
           "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
+          "genre_ids": [16, 35, 10751, 14],
           "id": 508943,
           "original_language": "en",
           "original_title": "Luca",
@@ -453,12 +362,7 @@
         {
           "adult": false,
           "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
+          "genre_ids": [16, 35, 10751, 14],
           "id": 508943,
           "original_language": "en",
           "original_title": "Luca",
@@ -475,11 +379,7 @@
         {
           "adult": false,
           "backdrop_path": "/inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg",
-          "genre_ids": [
-            14,
-            12,
-            28
-          ],
+          "genre_ids": [14, 12, 28],
           "id": 399566,
           "original_language": "en",
           "original_title": "Godzilla vs. Kong",
@@ -496,11 +396,7 @@
         {
           "adult": false,
           "backdrop_path": "/7JENyUT8ABxcvrcijDBVpdjgCY9.jpg",
-          "genre_ids": [
-            9648,
-            53,
-            27
-          ],
+          "genre_ids": [9648, 53, 27],
           "id": 602734,
           "original_language": "en",
           "original_title": "Spiral: From the Book of Saw",
@@ -517,12 +413,7 @@
         {
           "adult": false,
           "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
-          "genre_ids": [
-            16,
-            35,
-            10751,
-            14
-          ],
+          "genre_ids": [16, 35, 10751, 14],
           "id": 508943,
           "original_language": "en",
           "original_title": "Luca",
@@ -539,12 +430,7 @@
         {
           "adult": false,
           "backdrop_path": "/AmHOQ7rpHwiaUMRjKXztnauSJb7.jpg",
-          "genre_ids": [
-            28,
-            12,
-            14,
-            878
-          ],
+          "genre_ids": [28, 12, 14, 878],
           "id": 19995,
           "original_language": "en",
           "original_title": "Avatar",
@@ -561,11 +447,7 @@
         {
           "adult": false,
           "backdrop_path": "/7mbBY0I99nLegO8rcmdLKSU8y28.jpg",
-          "genre_ids": [
-            35,
-            53,
-            80
-          ],
+          "genre_ids": [35, 53, 80],
           "id": 8012,
           "original_language": "en",
           "original_title": "Get Shorty",
@@ -582,10 +464,7 @@
         {
           "adult": false,
           "backdrop_path": "/rAx0aCQ6luULuUb8tW6CD1365Mh.jpg",
-          "genre_ids": [
-            35,
-            80
-          ],
+          "genre_ids": [35, 80],
           "id": 4551,
           "original_language": "en",
           "original_title": "Be Cool",
