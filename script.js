@@ -52,6 +52,7 @@ function renderMovie(movie) {
   console.log(listButton)
   container.append(divImage, divDetails, actionDiv);
 
+
   content.append(container);
 
   listButton.addEventListener("click", (e) => {
@@ -66,26 +67,6 @@ function addToList(movie, e) {
     .then((res) => res.json())
     .then((json) => {
       const list = json.myList;
-<<<<<<< HEAD
-      console.log(list);
-    });
-
-  // let movieData = movie;
-  // fetch(`http://localhost:3000/myList`, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(movieData),
-  // })
-  //   .then((res) => res.json())
-  //   .then((json) => console.log(json));
-}
-
-function addToMyListArr(json) {
-  const list = json.myList;
-  console.log(list);
-=======
       list.push(movie);
       console.log(list);
       fetch(`http://localhost:3000/profile/1`, {
@@ -98,7 +79,6 @@ function addToMyListArr(json) {
         }),
       });
     });
->>>>>>> 4355e92a74931baeea3ac7d0d52431bbd87b5064
 }
 
 const comments = document.querySelector(".comments");
@@ -123,40 +103,24 @@ searchForm.addEventListener("submit", (e) => {
   findMovie(e.target.search.value);
 });
 
-<<<<<<< HEAD
-listButton.addEventListener("click", (e) => {
-  addToList(movie, e);
-});
+const theList = document.querySelector("#the-list");
 
 
-function addToList(movie, e) {
-console.log(movie);
-console.log(e);
-fetch(`http://localhost:3000/profile/1`)
-  .then((res) => res.json())
-  .then((json) => {
-    const list = json.myList;
-    console.log(list);
-  });
 
-// let movieData = movie;
-// fetch(`http://localhost:3000/myList`, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify(movieData),
-// })
-//   .then((res) => res.json())
-//   .then((json) => console.log(json));
+function currentMovies() {
+fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`)
+.then(res => res.json())
+.then(json => json.results.forEach((newMovie) => renderMovie(newMovie)))
 }
 
-function addToMyListArr(json) {
-const list = json.myList;
-console.log(list);
-}
-=======
-const theList = document.querySelector(".my-list");
 
-theList.addEventListener("click", e);
->>>>>>> 4355e92a74931baeea3ac7d0d52431bbd87b5064
+
+const current = document.querySelector('#current')
+
+current.addEventListener('click', () => {
+  const test = document.getElementById('content')
+  test.textContent = ''
+  console.log(test)
+
+  currentMovies()
+})

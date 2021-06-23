@@ -18,10 +18,11 @@
     />
   </head>
   <body>
-    <nav>
+    <!-- <nav> -->
+      
       <div id="logo">
         <div>
-          <svg width="50" height="50" fill="none" viewBox="0 0 24 24">
+          <svg width="100" height="100" fill="none" viewBox="0 0 24 24">
             <path
               stroke="currentColor"
               stroke-linecap="round"
@@ -80,10 +81,13 @@
             ></path>
           </svg>
         </div>
-        <h1>The Watch List</h1>
+        <!-- <h1>The Watch List</h1> -->
       </div>
+      <aside>
       <div class="my-list">
-        <h3>My List</h3>
+        <h1>THE WATCH LIST</h1>
+        <button id='the-list'><h3>My List</h3></button>
+        <button id='current'><h3>Currently Out</h3></button>
       </div>
       <div id="search-div">
         <form action="submit" id="search-form">
@@ -91,7 +95,8 @@
           <input type="submit" value="Search" />
         </form>
       </div>
-    </nav>
+    </aside>
+    <!-- </nav> -->
     <div class="container hidden">
       <div class="image">
         <img src="./images/forrest_gump.jpeg" alt="placeholder" />
@@ -134,7 +139,7 @@
       </form>
     </div>
     <div id="content"></div>
-    <div></div>
+    <div id="test"></div>
 
     <script src="./script.js" defer></script>
   </body>
