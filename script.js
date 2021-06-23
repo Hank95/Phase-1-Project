@@ -1,14 +1,14 @@
 const API_KEY = "5dd59b3fb5f3ddffe05ee3a3306f88ff";
 let logInID = 1;
-fetch(
-  `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=2021&sort_by=popularity.desc`
-)
-  .then((res) => res.json())
-  .then((json) => console.log(json));
+// fetch(
+//   `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=2021&sort_by=popularity.desc`
+// )
+//   .then((res) => res.json())
+//   .then((json) => console.log(json));
 
-fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
-  .then((res) => res.json())
-  .then((json) => console.log(json));
+// fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
+//   .then((res) => res.json())
+//   .then((json) => console.log(json));
 
 function findMovie(movie) {
   fetch(
@@ -23,7 +23,6 @@ function findMovie(movie) {
 const content = document.querySelector("#content");
 
 function renderMovie(movie) {
-  console.log(movie.original_title);
   const container = document.createElement("div");
   container.className = "container";
   const divImage = document.createElement("div");
@@ -57,7 +56,6 @@ function renderMovie(movie) {
   } else if (movie.poster_path === null) {
     image.src = "./images/notFoundPic.jpg";
   }
-  console.log(movie.poster_path);
 
   content.append(container);
 
@@ -120,8 +118,6 @@ searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   content.innerHTML = "";
   listContainer.innerHTML = "";
-
-  console.log(e.target.search.value);
   findMovie(e.target.search.value);
 });
 
