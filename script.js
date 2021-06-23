@@ -49,7 +49,7 @@ function renderMovie(movie) {
   listButton.className = "list-button";
   listButtonDiv.append(listButton);
   actionDiv.append(listButtonDiv);
-  console.log(listButton)
+  console.log(listButton);
   container.append(divImage, divDetails, actionDiv);
 
   content.append(container);
@@ -66,26 +66,6 @@ function addToList(movie, e) {
     .then((res) => res.json())
     .then((json) => {
       const list = json.myList;
-<<<<<<< HEAD
-      console.log(list);
-    });
-
-  // let movieData = movie;
-  // fetch(`http://localhost:3000/myList`, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(movieData),
-  // })
-  //   .then((res) => res.json())
-  //   .then((json) => console.log(json));
-}
-
-function addToMyListArr(json) {
-  const list = json.myList;
-  console.log(list);
-=======
       list.push(movie);
       console.log(list);
       fetch(`http://localhost:3000/profile/1`, {
@@ -98,7 +78,6 @@ function addToMyListArr(json) {
         }),
       });
     });
->>>>>>> 4355e92a74931baeea3ac7d0d52431bbd87b5064
 }
 
 const comments = document.querySelector(".comments");
@@ -123,40 +102,6 @@ searchForm.addEventListener("submit", (e) => {
   findMovie(e.target.search.value);
 });
 
-<<<<<<< HEAD
-listButton.addEventListener("click", (e) => {
-  addToList(movie, e);
-});
-
-
-function addToList(movie, e) {
-console.log(movie);
-console.log(e);
-fetch(`http://localhost:3000/profile/1`)
-  .then((res) => res.json())
-  .then((json) => {
-    const list = json.myList;
-    console.log(list);
-  });
-
-// let movieData = movie;
-// fetch(`http://localhost:3000/myList`, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify(movieData),
-// })
-//   .then((res) => res.json())
-//   .then((json) => console.log(json));
-}
-
-function addToMyListArr(json) {
-const list = json.myList;
-console.log(list);
-}
-=======
 const theList = document.querySelector(".my-list");
 
 theList.addEventListener("click", e);
->>>>>>> 4355e92a74931baeea3ac7d0d52431bbd87b5064
