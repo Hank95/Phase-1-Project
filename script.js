@@ -1,14 +1,14 @@
 const API_KEY = "5dd59b3fb5f3ddffe05ee3a3306f88ff";
 let logInID = 1;
 fetch(
-  `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=vote_average.desc`
+  `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=2021&sort_by=popularity.desc`
 )
   .then((res) => res.json())
   .then((json) => console.log(json));
 
-fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
-  .then((res) => res.json())
-  .then((json) => console.log(json));
+// fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
+//   .then((res) => res.json())
+//   .then((json) => console.log(json));
 
 function findMovie(movie) {
   fetch(
@@ -58,6 +58,7 @@ function renderMovie(movie) {
   listButton.addEventListener("click", (e) => {
     e.preventDefault();
     addToList(movie, e, logInID);
+    renderMyList(1);
   });
 }
 
@@ -82,7 +83,7 @@ function addToList(movie, e, logInID) {
         body: JSON.stringify({
           myList: list,
         }),
-      });
+      }).then(renderMyList(logInID));
     });
 }
 

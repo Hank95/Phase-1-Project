@@ -264,6 +264,105 @@
           "vote_average": 5,
           "vote_count": 103,
           "dateAdded": "6/22/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/1R24pjB7MYzMvYM9JAMPLjdrWyi.jpg",
+          "genre_ids": [
+            35,
+            18,
+            10749
+          ],
+          "id": 416477,
+          "original_language": "en",
+          "original_title": "The Big Sick",
+          "overview": "Pakistan-born comedian Kumail Nanjiani and grad student Emily Gardner fall in love but struggle as their cultures clash. When Emily contracts a mysterious illness, Kumail finds himself forced to face her feisty parents, his family's expectations, and his true feelings.",
+          "popularity": 13.246,
+          "poster_path": "/qquEFkFbQX1i8Bal260EgGCnZ0f.jpg",
+          "release_date": "2017-03-30",
+          "title": "The Big Sick",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 1847,
+          "dateAdded": "6/22/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/uwOGuf5q0xxUVEfMCy4ooU1S02M.jpg",
+          "genre_ids": [
+            37
+          ],
+          "id": 243655,
+          "original_language": "pt",
+          "original_title": "Top Gun",
+          "overview": "A gunslinger returns to his hometown to warn of an impending outlaw gang attack, but he's met with hatred and fear for his previous killings.",
+          "popularity": 1.604,
+          "poster_path": "/A4bwWlc6AgWL1cl9LS05pSKdNT7.jpg",
+          "release_date": "1955-12-01",
+          "title": "Top Gun",
+          "video": false,
+          "vote_average": 6,
+          "vote_count": 3,
+          "dateAdded": "6/22/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/pLrVfnhf0N6l2z0qD081xofydGt.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 94026,
+          "original_language": "en",
+          "original_title": "Bert Stern: Original Madman",
+          "overview": "The untold and intimate life story of one of the greatest American photographers of all time, Bert Stern. After working alongside Stanley Kubrick at Look Magazine, Stern became an original Madison Avenue 'mad man', his images helping to create modern advertising. Ground-breaking photos of Elizabeth Taylor and Richard Burton, Marilyn Monroe and Twiggy, coupled with his astonishing success in advertising, minted Stern as a celebrity in his own right.",
+          "popularity": 3.234,
+          "poster_path": "/uF8uAzu8aMQwAGFOPNhLeFzsOhh.jpg",
+          "release_date": "2011-09-02",
+          "title": "Bert Stern: Original Madman",
+          "video": false,
+          "vote_average": 8,
+          "vote_count": 3,
+          "dateAdded": "6/22/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/k98zx90KvkGmGxJ7inYYmvSHdkV.jpg",
+          "genre_ids": [
+            35,
+            27,
+            28
+          ],
+          "id": 381237,
+          "original_language": "en",
+          "original_title": "Office Uprising",
+          "overview": "The compound of an arms manufacturer turns into a zombie nightmare when its workers are given the wrong formula.",
+          "popularity": 7.64,
+          "poster_path": "/fcRAOCmDcFYivMNM5ink3OMMe0V.jpg",
+          "release_date": "2018-06-19",
+          "title": "Office Uprising",
+          "video": false,
+          "vote_average": 5.2,
+          "vote_count": 132,
+          "dateAdded": "6/22/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/3tqRm30c1Nbe82xvBOdRhYh0Uet.jpg",
+          "genre_ids": [
+            35
+          ],
+          "id": 11977,
+          "original_language": "en",
+          "original_title": "Caddyshack",
+          "overview": "At an exclusive country club, an ambitious young caddy, Danny Noonan, eagerly pursues a caddy scholarship in hopes of attending college and, in turn, avoiding a job at the lumber yard. In order to succeed, he must first win the favour of the elitist Judge Smails, and then the caddy golf tournament which Smails sponsors.",
+          "popularity": 9.818,
+          "poster_path": "/8mS6b2ATYjynchFX9trkzwm5mjA.jpg",
+          "release_date": "1980-07-25",
+          "title": "Caddyshack",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 796,
+          "dateAdded": "6/23/2021"
         }
       ]
     }
