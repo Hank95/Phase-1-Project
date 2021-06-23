@@ -52,6 +52,13 @@ function renderMovie(movie) {
   actionDiv.append(listButtonDiv);
   container.append(divImage, divDetails, actionDiv);
 
+  if (movie.poster_path) {
+    image.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+  } else if (movie.poster_path === null) {
+    image.src = "./images/notFoundPic.jpg";
+  }
+  console.log(movie.poster_path);
+
   content.append(container);
 
   listButton.addEventListener("click", (e) => {
