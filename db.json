@@ -513,6 +513,91 @@
           "vote_average": 6.4,
           "vote_count": 417,
           "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            14
+          ],
+          "id": 508943,
+          "original_language": "en",
+          "original_title": "Luca",
+          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
+          "popularity": 3668.188,
+          "poster_path": "/7rhzEufovmmUqVjcbzMHTBQ2SCG.jpg",
+          "release_date": "2021-06-17",
+          "title": "Luca",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 858,
+          "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/AmHOQ7rpHwiaUMRjKXztnauSJb7.jpg",
+          "genre_ids": [
+            28,
+            12,
+            14,
+            878
+          ],
+          "id": 19995,
+          "original_language": "en",
+          "original_title": "Avatar",
+          "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+          "popularity": 86.661,
+          "poster_path": "/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg",
+          "release_date": "2009-12-10",
+          "title": "Avatar",
+          "video": false,
+          "vote_average": 7.5,
+          "vote_count": 23537,
+          "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7mbBY0I99nLegO8rcmdLKSU8y28.jpg",
+          "genre_ids": [
+            35,
+            53,
+            80
+          ],
+          "id": 8012,
+          "original_language": "en",
+          "original_title": "Get Shorty",
+          "overview": "Chili Palmer is a Miami mobster who gets sent by his boss, the psychopathic \"Bones\" Barboni, to collect a bad debt from Harry Zimm, a Hollywood producer who specializes in cheesy horror films. When Chili meets Harry's leading lady, the romantic sparks fly. After pitching his own life story as a movie idea, Chili learns that being a mobster and being a Hollywood producer really aren't all that different.",
+          "popularity": 8.515,
+          "poster_path": "/5XSVAyHmTCFOWaqEQ0LUHh3yssB.jpg",
+          "release_date": "1995-10-20",
+          "title": "Get Shorty",
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 703,
+          "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/rAx0aCQ6luULuUb8tW6CD1365Mh.jpg",
+          "genre_ids": [
+            35,
+            80
+          ],
+          "id": 4551,
+          "original_language": "en",
+          "original_title": "Be Cool",
+          "overview": "Disenchanted with the movie industry, Chili Palmer tries the music industry, meeting and romancing a widow of a music executive along the way.",
+          "popularity": 13.54,
+          "poster_path": "/ekKCH7Zkb5ZTr1f1AczZY23FH.jpg",
+          "release_date": "2005-03-04",
+          "title": "Be Cool",
+          "video": false,
+          "vote_average": 5.4,
+          "vote_count": 659,
+          "dateAdded": "6/23/2021"
         }
       ]
     }
