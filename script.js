@@ -83,6 +83,7 @@ function addToList(movie, e, logInID) {
       const movieWDate = movie;
       let today = new Date().toLocaleDateString();
       movieWDate.dateAdded = today;
+      movieWDate.watched = false;
       console.log(movieWDate);
       list.push(movie);
       patchList(list);
@@ -170,15 +171,36 @@ function movieCard(movie) {
   const dateP = document.createElement("p");
   const ratingP = document.createElement("p");
   const watchedP = document.createElement("p");
+  const watched = document.createElement("div");
+  watched.className = "button b2 button-10";
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "checkbox";
+  checkbox.name = "checkbox";
+  checkbox.checked = true;
+  const knobs = document.createElement("div");
+  knobs.className = "knobs";
+  const yesSpan = document.createElement("span");
+  yesSpan.innerText = "YES";
+  knobs.append(yesSpan);
+  const layerDiv = document.createElement("div");
+  layerDiv.className = "layer";
+
+  watched.append(checkbox, knobs, layerDiv);
+
+  checkbox.addEventListener("change", (e) => {
+    console.log(e.changed);
+  });
+
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
   deleteButton.innerText = "☓";
   h3.textContent = movie.original_title;
   dateP.textContent = movie.dateAdded;
   ratingP.textContent = `${movie.vote_average}/10`;
-  watchedP.textContent = "Watched: yes/no";
+  watchedP.innerText = "Watched?";
 
-  movieInfoDiv.append(h3, dateP, ratingP, watchedP);
+  movieInfoDiv.append(h3, dateP, ratingP, watchedP, watched);
 
   movieDiv.append(deleteButton, img, movieInfoDiv);
 
@@ -197,3 +219,4 @@ const mainTitle = document.querySelector("#main-title");
 mainTitle.addEventListener("click", () => {
   window.location.reload();
 });
+const checkbox = document.querySelectorAll(".checkbox");
