@@ -449,6 +449,70 @@
           "vote_average": 8.3,
           "vote_count": 858,
           "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            14
+          ],
+          "id": 508943,
+          "original_language": "en",
+          "original_title": "Luca",
+          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
+          "popularity": 3668.188,
+          "poster_path": "/jTswp6KyDYKtvC52GbHagrZbGvD.jpg",
+          "release_date": "2021-06-17",
+          "title": "Luca",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 858,
+          "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg",
+          "genre_ids": [
+            14,
+            12,
+            28
+          ],
+          "id": 399566,
+          "original_language": "en",
+          "original_title": "Godzilla vs. Kong",
+          "overview": "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
+          "popularity": 994.888,
+          "poster_path": "/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+          "release_date": "2021-03-24",
+          "title": "Godzilla vs. Kong",
+          "video": false,
+          "vote_average": 8,
+          "vote_count": 6100,
+          "dateAdded": "6/23/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/7JENyUT8ABxcvrcijDBVpdjgCY9.jpg",
+          "genre_ids": [
+            9648,
+            53,
+            27
+          ],
+          "id": 602734,
+          "original_language": "en",
+          "original_title": "Spiral: From the Book of Saw",
+          "overview": "Working in the shadow of an esteemed police veteran, brash Detective Ezekiel “Zeke” Banks and his rookie partner take charge of a grisly investigation into murders that are eerily reminiscent of the city’s gruesome past.  Unwittingly entrapped in a deepening mystery, Zeke finds himself at the center of the killer’s morbid game.",
+          "popularity": 794.291,
+          "poster_path": "/lcyKve7nXRFgRyms9M1bndNkKOx.jpg",
+          "release_date": "2021-05-12",
+          "title": "Spiral: From the Book of Saw",
+          "video": false,
+          "vote_average": 6.4,
+          "vote_count": 417,
+          "dateAdded": "6/23/2021"
         }
       ]
     }
