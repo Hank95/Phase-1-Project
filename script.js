@@ -161,3 +161,9 @@ function movieCard(movie) {
 
   listContainer.append(movieDiv);
 }
+
+const mainTitle = document.querySelector("#main-title");
+
+mainTitle.addEventListener("click", () => {
+  window.location.reload();
+});

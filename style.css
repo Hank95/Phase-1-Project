@@ -58,6 +58,10 @@ h1 {
 #main-title {
   margin-left: 1rem;
 }
+#main-title:hover {
+  color: rgb(255, 94, 0);
+  cursor: pointer;
+}
 #title {
   width: 80%;
   margin-left: 20%;
@@ -115,6 +119,8 @@ button {
 }
 button:hover {
   background-color: #7878dd;
+  color: rgb(255, 94, 0);
+  cursor: pointer;
 }
 #submit {
   width: 20%;
