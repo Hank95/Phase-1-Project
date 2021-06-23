@@ -57,7 +57,6 @@ function renderMovie(movie) {
   listButton.addEventListener("click", (e) => {
     e.preventDefault();
     addToList(movie, e, logInID);
-    renderMyList(logInID);
   });
 }
 
@@ -82,7 +81,7 @@ function addToList(movie, e, logInID) {
         body: JSON.stringify({
           myList: list,
         }),
-      }).then(renderMyList(logInID));
+      });
     });
 }
 
@@ -144,12 +143,16 @@ function movieCard(movie) {
   movieDiv.className = "movie-div";
   const img = document.createElement("img");
   img.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+  img.className = "list-movie-img";
   const movieInfoDiv = document.createElement("div");
   movieInfoDiv.className = "movie-info";
   const h3 = document.createElement("h3");
   const dateP = document.createElement("p");
   const ratingP = document.createElement("p");
   const watchedP = document.createElement("p");
+  const deleteButton = document.createElement("a");
+  deleteButton.className = "close";
+  deleteButton.innerText = "X";
   h3.textContent = movie.original_title;
   dateP.textContent = movie.dateAdded;
   ratingP.textContent = `${movie.vote_average}/10`;

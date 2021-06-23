@@ -183,3 +183,35 @@ aside {
   text-align: center;
   margin: 2rem;
 }
+
+/* myList Delete button */
+.close {
+  position: relative;
+  left: 100px;
+  /* top: 32px; */
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  color: rgb(196, 23, 23);
+}
+/* .movie-div:hover .close {
+  color: rgb(196, 23, 23);
+  opacity: 1;
+} */
+/* .close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: rgb(212, 45, 45);
+  border: black;
+  outline-color: black;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+} */
