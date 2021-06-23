@@ -6,9 +6,9 @@ let logInID = 1;
 //   .then((res) => res.json())
 //   .then((json) => console.log(json));
 
-// fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
-//   .then((res) => res.json())
-//   .then((json) => console.log(json));
+fetch(`https://api.themoviedb.org/3/movie/2280/credits?api_key=${API_KEY}&language=en-US`)
+  .then((res) => res.json())
+  .then((json) => console.log(json));
 
 function findMovie(movie) {
   fetch(
@@ -16,14 +16,14 @@ function findMovie(movie) {
   )
     .then((res) => res.json())
     .then((json) => {
-      console.log(json);
+      // console.log(json);
       json.results.forEach((movie) => renderMovie(movie));
     });
 }
 const content = document.querySelector("#content");
 
 function renderMovie(movie) {
-  console.log(movie.original_title);
+  // console.log(movie);
   const container = document.createElement("div");
   container.className = "container";
   const divImage = document.createElement("div");
@@ -97,8 +97,37 @@ function currentMovies() {
     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
   )
     .then((res) => res.json())
-    .then((json) => json.results.forEach((newMovie) => renderMovie(newMovie)));
+    .then((json) => json.results.forEach((newMovie) => {
+      renderMovie(newMovie)
+    }));   
+
 }
+
+
+function getCast() {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+  )
+    .then((res) => res.json())
+    .then((json) => json.results.forEach((newMovie) => {
+
+      const newMovieID = newMovie.id
+      
+
+      fetch(`https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`)
+      .then((res) => res.json())
+      .then((json) => json.cast.forEach(filmCast => {
+
+        console.log(filmCast)
+      })
+      
+    );
+}))
+}
+
+getCast()
+
+///
 const searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -108,6 +137,7 @@ searchForm.addEventListener("submit", (e) => {
   console.log(e.target.search.value);
   findMovie(e.target.search.value);
 });
+
 
 const theList = document.querySelector("#the-list");
 
@@ -119,7 +149,7 @@ current.addEventListener("click", () => {
   title.innerHTML = "";
 
   const currentTitle = document.createElement("h2");
-  currentTitle.innerText = "Popular";
+  currentTitle.innerText = "POPULAR";
   title.append(currentTitle);
 
   currentMovies();
@@ -137,7 +167,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 function renderMyList(logInID) {
   const myListTitle = document.createElement("h2");
-  myListTitle.innerText = "My List";
+  myListTitle.innerText = "MY LIST";
   title.append(myListTitle);
   fetch(`http://localhost:3000/profile/${logInID}`)
     .then((res) => res.json())
