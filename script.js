@@ -6,7 +6,9 @@ let logInID = 1;
 //   .then((res) => res.json())
 //   .then((json) => console.log(json));
 
-fetch(`https://api.themoviedb.org/3/movie/2280/credits?api_key=${API_KEY}&language=en-US`)
+fetch(
+  `https://api.themoviedb.org/3/movie/2280/credits?api_key=${API_KEY}&language=en-US`
+)
   .then((res) => res.json())
   .then((json) => console.log(json));
 
@@ -57,7 +59,19 @@ function renderMovie(movie) {
   listButton.className = "list-button";
   listButton.type = "button";
   listButtonDiv.append(listButton);
-  actionDiv.append(listButtonDiv);
+  const ratingDiv = document.createElement("div");
+  if (movie.vote_count === 0) {
+    ratingDiv.innerText = "No Vote Yet";
+    ratingDiv.classList = "ratingDiv noVote";
+  } else {
+    ratingDiv.innerText = `${movie.vote_average}/10`;
+    if (movie.vote_average > 5) {
+      ratingDiv.classList = "ratingDiv good-movie";
+    } else {
+      ratingDiv.classList = "ratingDiv bad-movie";
+    }
+  }
+  actionDiv.append(listButtonDiv, ratingDiv);
   container.append(divImage, divDetails, actionDiv);
 
   content.append(container);
@@ -98,10 +112,21 @@ function currentMovies() {
     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
   )
     .then((res) => res.json())
-    .then((json) => json.results.forEach((newMovie) => {
-      renderMovie(newMovie)
-    }));   
-
+    .then((json) =>
+      json.results.forEach((newMovie) => {
+        renderMovie(newMovie);
+      })
+    );
+}
+function updateMovie(movie, e, update) {
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let index = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(index, 1, update);
+      patchList(list);
+    });
 }
 
 // Upcoming movies
@@ -111,7 +136,6 @@ function currentMovies() {
 //   )
 //     .then((res) => res.json())
 //     .then(console.log)
-       
 
 // }
 // upcomingMovies()
@@ -124,15 +148,14 @@ function currentMovies() {
 //     .then((json) => json.results.forEach((newMovie) => {
 
 //       const newMovieID = newMovie.id
-      
 
 //       fetch(`https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`)
 //       .then((res) => res.json())
 //       .then((json) => json.cast.forEach(filmCast => {
 
-        // console.log(filmCast)
+// console.log(filmCast)
 //       })
-      
+
 //     );
 // }))
 // }
@@ -161,7 +184,6 @@ searchForm.addEventListener("submit", (e) => {
   console.log(e.target.search.value);
   findMovie(e.target.search.value);
 });
-
 
 const theList = document.querySelector("#the-list");
 
@@ -213,6 +235,8 @@ function movieCard(movie) {
   const watchedP = document.createElement("p");
   const watched = document.createElement("div");
   watched.className = "button b2 button-10";
+
+  // Watched switch
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.className = "checkbox";
@@ -225,26 +249,64 @@ function movieCard(movie) {
   knobs.append(yesSpan);
   const layerDiv = document.createElement("div");
   layerDiv.className = "layer";
-
   watched.append(checkbox, knobs, layerDiv);
-
   checkbox.addEventListener("change", (e) => {
-    updateWatched(movie, e);
+    let checkedMovie = movie;
+    checkedMovie.watched = !e.target.checked;
+    updateMovie(movie, e, checkedMovie);
+    if (!e.target.checked) {
+      movieDiv.append(sliderContainer);
+    } else sliderContainer.remove();
+  });
+
+  // Rating Slider
+  const sliderContainer = document.createElement("div");
+  const slider = document.createElement("input");
+  slider.type = "range";
+  slider.min = "1";
+  slider.max = "10";
+  slider.value = `${movie.vote_average}`;
+  slider.className = "slider";
+  sliderContainer.append(slider);
+  slider.addEventListener("input", (e) => {
+    ratingP.textContent = `${slider.value}/10`;
+  });
+  slider.addEventListener("change", (e) => {
+    let newVoteMovie = movie;
+    newVoteMovie.vote_average = slider.value;
+    updateMovie(movie, e, newVoteMovie);
   });
 
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
   deleteButton.innerText = "X";
   h3.textContent = movie.original_title;
-  dateP.textContent = movie.dateAdded;
+  dateP.textContent = `Added: ${movie.dateAdded}`;
   ratingP.textContent = `${movie.vote_average}/10`;
   watchedP.textContent = "Watched: yes/no";
 
-  movieInfoDiv.append(h3, dateP, ratingP, watchedP);
+  movieInfoDiv.append(dateP, h3, watchedP, watched, ratingP);
 
-  movieDiv.append(img, movieInfoDiv);
+  movieDiv.append(deleteButton, img, movieInfoDiv);
+  if (!checkbox.checked) {
+    movieDiv.append(sliderContainer);
+  }
 
   listContainer.append(movieDiv);
+
+  deleteButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    deleteMovie(movie, e);
+    e.target.parentNode.remove();
+  });
+  if (movie.id === 11031) {
+    slider.max = "11";
+    ratingP.textContent = `${slider.value}/11`;
+    slider.addEventListener("input", (e) => {
+      ratingP.textContent = `${slider.value}/11`;
+    });
+  }
 }
 
 const mainTitle = document.querySelector("#main-title");
@@ -254,32 +316,20 @@ mainTitle.addEventListener("click", () => {
 });
 
 // about section
-const aboutBtn = document.getElementById('about')
+const aboutBtn = document.getElementById("about");
 
-aboutBtn.addEventListener('click', () => {
+aboutBtn.addEventListener("click", () => {
   content.innerHTML = "";
 
-  const aboutTitle = document.querySelector('div#title h2')
-  aboutTitle.innerText = "ABOUT"
+  const aboutTitle = document.querySelector("div#title h2");
+  aboutTitle.innerText = "ABOUT";
 
-  const aboutP = document.getElementById('about-section')
-  aboutP.removeAttribute('hidden')
-  
-  const tmdbImage = document.createElement('img')
-  tmdbImage.id = "tmdb-logo"
-  tmdbImage.src = "./images/TMDB_logo.svg"
+  const aboutP = document.getElementById("about-section");
+  aboutP.removeAttribute("hidden");
 
-  content.append(aboutP, tmdbImage)
-})
-function updateWatched(movie, e) {
-  let checkedMovie = movie;
-  checkedMovie.watched = !e.target.checked;
-  fetch(`http://localhost:3000/profile/${logInID}`)
-    .then((res) => res.json())
-    .then((json) => {
-      const list = json.myList;
-      let index = list.map((item) => item.id).indexOf(movie.id);
-      list.splice(index, 1, checkedMovie);
-      patchList(list);
-    });
-}
+  const tmdbImage = document.createElement("img");
+  tmdbImage.id = "tmdb-logo";
+  tmdbImage.src = "./images/TMDB_logo.svg";
+
+  content.append(aboutP, tmdbImage);
+});

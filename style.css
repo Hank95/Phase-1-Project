@@ -109,8 +109,26 @@ h1 {
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
-.comments {
-  width: 100%;
+.ratingDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 40px;
+  width: 140px;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 5px;
+}
+.noVote {
+  background-color: rgb(158, 143, 124);
+}
+.good-movie {
+  background-color: rgb(92, 194, 118);
+}
+.bad-movie {
+  background-color: rgb(241, 114, 110);
 }
 /* form */
 #comment {
