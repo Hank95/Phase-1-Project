@@ -114,28 +114,28 @@ function patchList(list) {
     }),
   });
 }
-function getCast() {
-  fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
-  )
-    .then((res) => res.json())
-    .then((json) =>
-      json.results.forEach((newMovie) => {
-        const newMovieID = newMovie.id;
-        fetch(
-          `https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`
-        )
-          .then((res) => res.json())
-          .then((json) =>
-            json.cast.forEach((filmCast) => {
-              console.log(filmCast);
-            })
-          );
-      })
-    );
-}
+// function getCast() {
+//   fetch(
+//     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+//   )
+//     .then((res) => res.json())
+//     .then((json) =>
+//       json.results.forEach((newMovie) => {
+//         const newMovieID = newMovie.id;
+//         fetch(
+//           `https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`
+//         )
+//           .then((res) => res.json())
+//           .then((json) =>
+//             json.cast.forEach((filmCast) => {
+//               console.log(filmCast);
+//             })
+//           );
+//       })
+//     );
+// }
 
-getCast();
+// getCast();
 const searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -199,7 +199,7 @@ function movieCard(movie) {
   checkbox.type = "checkbox";
   checkbox.className = "checkbox";
   checkbox.name = "checkbox";
-  checkbox.checked = true;
+  checkbox.checked = !movie.watched;
   const knobs = document.createElement("div");
   knobs.className = "knobs";
   const yesSpan = document.createElement("span");
@@ -211,7 +211,7 @@ function movieCard(movie) {
   watched.append(checkbox, knobs, layerDiv);
 
   checkbox.addEventListener("change", (e) => {
-    console.log(e.changed);
+    updateWatched(movie, e);
   });
 
   const deleteButton = document.createElement("a");
@@ -241,4 +241,16 @@ const mainTitle = document.querySelector("#main-title");
 mainTitle.addEventListener("click", () => {
   window.location.reload();
 });
-const checkbox = document.querySelectorAll(".checkbox");
+
+function updateWatched(movie, e) {
+  let checkedMovie = movie;
+  checkedMovie.watched = !e.target.checked;
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let index = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(index, 1, checkedMovie);
+      patchList(list);
+    });
+}
