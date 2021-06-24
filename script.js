@@ -56,7 +56,19 @@ function renderMovie(movie) {
   listButton.className = "list-button";
   listButton.type = "button";
   listButtonDiv.append(listButton);
-  actionDiv.append(listButtonDiv);
+  const ratingDiv = document.createElement("div");
+  if (movie.vote_count === 0) {
+    ratingDiv.innerText = "No Vote Yet";
+    ratingDiv.classList = "ratingDiv noVote";
+  } else {
+    ratingDiv.innerText = `${movie.vote_average}/10`;
+    if (movie.vote_average > 5) {
+      ratingDiv.classList = "ratingDiv good-movie";
+    } else {
+      ratingDiv.classList = "ratingDiv bad-movie";
+    }
+  }
+  actionDiv.append(listButtonDiv, ratingDiv);
   container.append(divImage, divDetails, actionDiv);
 
   if (movie.poster_path) {

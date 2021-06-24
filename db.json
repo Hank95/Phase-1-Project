@@ -347,6 +347,70 @@
           "vote_count": 396,
           "dateAdded": "6/24/2021",
           "watched": false
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg",
+          "genre_ids": [
+            35,
+            80
+          ],
+          "id": 337404,
+          "original_language": "en",
+          "original_title": "Cruella",
+          "overview": "In 1970s London amidst the punk rock revolution, a young grifter named Estella is determined to make a name for herself with her designs. She befriends a pair of young thieves who appreciate her appetite for mischief, and together they are able to build a life for themselves on the London streets. One day, Estella’s flair for fashion catches the eye of the Baroness von Hellman, a fashion legend who is devastatingly chic and terrifyingly haute. But their relationship sets in motion a course of events and revelations that will cause Estella to embrace her wicked side and become the raucous, fashionable and revenge-bent Cruella.",
+          "popularity": 2675.533,
+          "poster_path": "/rTh4K5uw9HypmpGslcKd4QfHl93.jpg",
+          "release_date": "2021-05-26",
+          "title": "Cruella",
+          "video": false,
+          "vote_average": 8.5,
+          "vote_count": 3183,
+          "dateAdded": "6/24/2021",
+          "watched": false
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/wjQXZTlFM3PVEUmKf1sUajjygqT.jpg",
+          "genre_ids": [
+            878,
+            28,
+            53
+          ],
+          "id": 581726,
+          "original_language": "en",
+          "original_title": "Infinite",
+          "overview": "Evan McCauley has skills he never learned and memories of places he has never visited. Self-medicated and on the brink of a mental breakdown, a secret group that call themselves “Infinites” come to his rescue, revealing that his memories are real.",
+          "popularity": 2760.572,
+          "poster_path": "/niw2AKHz6XmwiRMLWaoyAOAti0G.jpg",
+          "release_date": "2021-09-08",
+          "title": "Infinite",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0,
+          "dateAdded": "6/24/2021",
+          "watched": false
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/70AV2Xx5FQYj20labp0EGdbjI6E.jpg",
+          "genre_ids": [
+            80,
+            28
+          ],
+          "id": 637649,
+          "original_language": "en",
+          "original_title": "Wrath of Man",
+          "overview": "A cold and mysterious new security guard for a Los Angeles cash truck company surprises his co-workers when he unleashes precision skills during a heist. The crew is left wondering who he is and where he came from. Soon, the marksman's ultimate motive becomes clear as he takes dramatic and irrevocable steps to settle a score.",
+          "popularity": 1770.985,
+          "poster_path": "/M7SUK85sKjaStg4TKhlAVyGlz3.jpg",
+          "release_date": "2021-04-22",
+          "title": "Wrath of Man",
+          "video": false,
+          "vote_average": 7.8,
+          "vote_count": 1070,
+          "dateAdded": "6/24/2021",
+          "watched": false
         }
       ]
     }
