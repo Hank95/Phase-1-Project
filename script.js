@@ -39,7 +39,15 @@ function renderMovie(movie) {
   movieDescription.textContent = "Description:";
   const movieDescriptionContent = document.createElement("p");
   movieDescriptionContent.textContent = movie.overview;
-  divDetails.append(movieTitle, movieDescription, movieDescriptionContent);
+  const releaseDate = document.createElement("h4");
+  releaseDate.className = "release-date";
+  releaseDate.innerText = `Released: ${movie.release_date}`;
+  divDetails.append(
+    movieTitle,
+    movieDescription,
+    movieDescriptionContent,
+    releaseDate
+  );
   const actionDiv = document.createElement("div");
   actionDiv.className = "action-div";
   const listButtonDiv = document.createElement("div");
@@ -132,6 +140,39 @@ function currentMovies() {
 // getCast()
 
 ///
+function patchList(list) {
+  fetch(`http://localhost:3000/profile/${logInID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      myList: list,
+    }),
+  });
+}
+// function getCast() {
+//   fetch(
+//     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+//   )
+//     .then((res) => res.json())
+//     .then((json) =>
+//       json.results.forEach((newMovie) => {
+//         const newMovieID = newMovie.id;
+//         fetch(
+//           `https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`
+//         )
+//           .then((res) => res.json())
+//           .then((json) =>
+//             json.cast.forEach((filmCast) => {
+//               console.log(filmCast);
+//             })
+//           );
+//       })
+//     );
+// }
+
+// getCast();
 const searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -191,6 +232,27 @@ function movieCard(movie) {
   const dateP = document.createElement("p");
   const ratingP = document.createElement("p");
   const watchedP = document.createElement("p");
+  const watched = document.createElement("div");
+  watched.className = "button b2 button-10";
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "checkbox";
+  checkbox.name = "checkbox";
+  checkbox.checked = !movie.watched;
+  const knobs = document.createElement("div");
+  knobs.className = "knobs";
+  const yesSpan = document.createElement("span");
+  yesSpan.innerText = "YES";
+  knobs.append(yesSpan);
+  const layerDiv = document.createElement("div");
+  layerDiv.className = "layer";
+
+  watched.append(checkbox, knobs, layerDiv);
+
+  checkbox.addEventListener("change", (e) => {
+    updateWatched(movie, e);
+  });
+
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
   deleteButton.innerText = "X";
@@ -230,3 +292,15 @@ aboutBtn.addEventListener('click', () => {
 
   content.append(aboutP, tmdbImage)
 })
+function updateWatched(movie, e) {
+  let checkedMovie = movie;
+  checkedMovie.watched = !e.target.checked;
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let index = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(index, 1, checkedMovie);
+      patchList(list);
+    });
+}
