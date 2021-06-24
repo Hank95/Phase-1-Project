@@ -151,28 +151,7 @@ function patchList(list) {
     }),
   });
 }
-// function getCast() {
-//   fetch(
-//     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
-//   )
-//     .then((res) => res.json())
-//     .then((json) =>
-//       json.results.forEach((newMovie) => {
-//         const newMovieID = newMovie.id;
-//         fetch(
-//           `https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`
-//         )
-//           .then((res) => res.json())
-//           .then((json) =>
-//             json.cast.forEach((filmCast) => {
-//               console.log(filmCast);
-//             })
-//           );
-//       })
-//     );
-// }
 
-// getCast();
 const searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
