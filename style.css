@@ -48,6 +48,7 @@ h1 {
 }
 #search-form {
   padding: 10px;
+  padding-right: 30pt;
   border: 0;
   /* box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06); */
 }
@@ -173,9 +174,12 @@ textarea {
 } */
 
 .container {
-  background-color: rgba(0, 0, 0, 0.06);
+  background-color: white;
   max-width: 80%;
   margin-left: 20%;
+  border-bottom: rgb(255, 94, 0);
+  border-style: solid;
+  border-width: 0px 0px .5px 0px;
 }
 
 aside {
@@ -323,4 +327,18 @@ aside {
 
 .button-10 .checkbox:checked ~ .layer {
   background-color: #fcebeb;
+}
+
+.about-para {
+  text-align: left;
+  margin-left: 20%;
+  font-size: 20pt;
+  padding-top: 30pt;
+}
+
+#tmdb-logo {
+  padding-top: 80pt;
+  padding-bottom: 50pt;
+  width: 500px;
+  float: right;
 }
