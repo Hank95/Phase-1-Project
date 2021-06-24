@@ -204,6 +204,7 @@ searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   content.innerHTML = "";
   listContainer.innerHTML = "";
+  aboutSection.className = "hidden";
 
   console.log(e.target.search.value);
   findMovie(e.target.search.value);
@@ -217,6 +218,7 @@ current.addEventListener("click", () => {
   content.innerHTML = "";
   listContainer.innerHTML = "";
   title.innerHTML = "";
+  aboutSection.className = "hidden";
 
   const currentTitle = document.createElement("h2");
   currentTitle.innerText = "POPULAR";
@@ -229,6 +231,7 @@ theList.addEventListener("click", (e) => {
   content.innerHTML = "";
   listContainer.innerHTML = "";
   title.innerHTML = "";
+  aboutSection.className = "hidden";
   renderMyList(logInID);
 });
 document.addEventListener("DOMContentLoaded", (e) => {
@@ -342,18 +345,23 @@ mainTitle.addEventListener("click", () => {
 // about section
 const aboutBtn = document.getElementById("about");
 
+const aboutSection = document.querySelector("#about-section");
 aboutBtn.addEventListener("click", () => {
   content.innerHTML = "";
+  title.innerHTML = "";
+  listContainer.innerHTML = "";
+  aboutSection.classList.remove("hidden");
 
-  const aboutTitle = document.querySelector("div#title h2");
+  const aboutTitle = document.createElement("h2");
   aboutTitle.innerText = "ABOUT";
+  title.append(aboutTitle);
 
-  const aboutP = document.getElementById("about-section");
-  aboutP.removeAttribute("hidden");
+  // const aboutP = document.getElementById("about-section");
+  // aboutP.classList.remove("hidden");
 
-  const tmdbImage = document.createElement("img");
-  tmdbImage.id = "tmdb-logo";
-  tmdbImage.src = "./images/TMDB_logo.svg";
+  // const tmdbImage = document.createElement("img");
+  // tmdbImage.id = "tmdb-logo";
+  // tmdbImage.src = "./images/TMDB_logo.svg";
 
-  content.append(aboutP, tmdbImage);
+  // content.append(aboutP, tmdbImage);
 });
