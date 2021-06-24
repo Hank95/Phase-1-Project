@@ -1,5 +1,6 @@
-const API_KEY = "5dd59b3fb5f3ddffe05ee3a3306f88ff";
-let logInID = 1;
+let API_KEY;
+let logInID;
+let userNom;
 // fetch(
 //   `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=2021&sort_by=popularity.desc`
 // )
@@ -349,12 +350,6 @@ function movieCard(movie) {
   }
 }
 
-const mainTitle = document.querySelector("#main-title");
-
-mainTitle.addEventListener("click", () => {
-  window.location.reload();
-});
-
 // about section
 const aboutBtn = document.getElementById("about");
 
@@ -368,13 +363,89 @@ aboutBtn.addEventListener("click", () => {
   const aboutTitle = document.createElement("h2");
   aboutTitle.innerText = "ABOUT";
   title.append(aboutTitle);
-
-  // const aboutP = document.getElementById("about-section");
-  // aboutP.classList.remove("hidden");
-
-  // const tmdbImage = document.createElement("img");
-  // tmdbImage.id = "tmdb-logo";
-  // tmdbImage.src = "./images/TMDB_logo.svg";
-
-  // content.append(aboutP, tmdbImage);
 });
+
+const switchers = [...document.querySelectorAll(".switcher")];
+
+// Login auth
+switchers.forEach((item) => {
+  item.addEventListener("click", function () {
+    switchers.forEach((item) =>
+      item.parentElement.classList.remove("is-active")
+    );
+    this.parentElement.classList.add("is-active");
+  });
+});
+
+const formLogIn = document.querySelector(".form-login");
+const formSignUp = document.querySelector(".form-signup");
+const logInEmail = document.querySelector("#login-email");
+const logInPassword = document.querySelector("#login-password");
+const signUpEmail = document.querySelector("#signup-email");
+const signUpPassword = document.querySelector("#signup-password");
+const signUpPasswordConfirm = document.querySelector(
+  "#signup-password-confirm"
+);
+const loginPage = document.querySelector("#loginPage");
+const mainPage = document.querySelector("#main");
+
+formLogIn.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  fetch(`http://localhost:3000/profile`)
+    .then((res) => res.json())
+    .then((json) => {
+      json.forEach((user) => {
+        console.log(typeof user.userName);
+        console.log(user.apiKey);
+        if (
+          logInEmail.value === user.userName &&
+          logInPassword.value === user.apiKey
+        ) {
+          logInID = user.id;
+          API_KEY = user.apiKey;
+          userNom = user.userName;
+
+          renderContent();
+        }
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
+
+formSignUp.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (signUpPassword.value === signUpPasswordConfirm.value) {
+    fetch("http://localhost:3000/profile", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName: signUpEmail.value,
+        apiKey: signUpPassword.value,
+        myList: [],
+      }),
+    });
+    logInID = signUpEmail.value;
+    API_KEY = signUpPassword.value;
+    userNom = signUpEmail.value;
+
+    renderContent();
+  } else alert("Please check passwords and try again");
+});
+
+const logOut = document.querySelector("#logOut-div");
+
+logOut.addEventListener("click", () => {
+  window.location.reload();
+});
+
+function renderContent() {
+  loginPage.classList.add("hidden");
+  main.classList.remove("hidden");
+  document.styleSheets[1].removeRule([0]);
+  currentMovies();
+}

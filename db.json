@@ -60,7 +60,7 @@
           "vote_average": "10",
           "vote_count": 0,
           "dateAdded": "6/24/2021",
-          "watched": false
+          "watched": true
         },
         {
           "adult": false,
@@ -165,7 +165,7 @@
           "release_date": "2021-05-19",
           "title": "F9",
           "video": false,
-          "vote_average": 8,
+          "vote_average": "4",
           "vote_count": 166,
           "dateAdded": "6/24/2021",
           "watched": true
@@ -408,6 +408,54 @@
           "dateAdded": "6/24/2021"
         }
       ]
+    },
+    {
+      "userName": "movies4me",
+      "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
+      "myList": [],
+      "id": 2
+    },
+    {
+      "userName": "movies4me",
+      "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
+      "myList": [],
+      "id": 3
+    },
+    {
+      "userName": "netFlix4life",
+      "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
+      "myList": [
+        {
+          "adult": false,
+          "backdrop_path": "/uAQrHntCccFpvxp75XdQgqexlJd.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            14
+          ],
+          "id": 508943,
+          "original_language": "en",
+          "original_title": "Luca",
+          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
+          "popularity": 5135.463,
+          "poster_path": "/7rhzEufovmmUqVjcbzMHTBQ2SCG.jpg",
+          "release_date": "2021-06-17",
+          "title": "Luca",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 969,
+          "dateAdded": "6/24/2021",
+          "watched": false
+        }
+      ],
+      "id": 4
+    },
+    {
+      "userName": "hotFlixs",
+      "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
+      "myList": [],
+      "id": 5
     }
   ]
 }

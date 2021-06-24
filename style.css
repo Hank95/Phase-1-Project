@@ -109,6 +109,14 @@ h1 {
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
+#logOut-div {
+  position: absolute;
+  bottom: 20px;
+  justify-content: center;
+  text-align: center;
+  width: 75%;
+  margin-left: 12.5%;
+}
 .ratingDiv {
   display: flex;
   justify-content: center;
