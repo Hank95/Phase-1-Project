@@ -2,9 +2,10 @@
 The Phase 1 Project is by Daniel Madariaga and Henry Pendleton.
 
 For the full experience:
-First run:
+
+Run:
+
 npm install -g json-server
-then run:
 json-server --watch db.json
 
 Welcome to the Movie List
