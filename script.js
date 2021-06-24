@@ -121,6 +121,17 @@ function currentMovies() {
       })
     );
 }
+function deleteMovie(movie, e) {
+  console.log(movie);
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let removeIndex = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(removeIndex, 1);
+      patchList(list);
+    });
+}
 function updateMovie(movie, e, update) {
   fetch(`http://localhost:3000/profile/${logInID}`)
     .then((res) => res.json())
