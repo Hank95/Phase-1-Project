@@ -122,6 +122,16 @@ function deleteMovie(movie, e) {
       patchList(list);
     });
 }
+function updateMovie(movie, e, update) {
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let index = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(index, 1, update);
+      patchList(list);
+    });
+}
 
 function patchList(list) {
   fetch(`http://localhost:3000/profile/${logInID}`, {
@@ -231,7 +241,9 @@ function movieCard(movie) {
   layerDiv.className = "layer";
   watched.append(checkbox, knobs, layerDiv);
   checkbox.addEventListener("change", (e) => {
-    updateWatched(movie, e);
+    let checkedMovie = movie;
+    checkedMovie.watched = !e.target.checked;
+    updateMovie(movie, e, checkedMovie);
     if (!e.target.checked) {
       movieDiv.append(sliderContainer);
     } else sliderContainer.remove();
@@ -246,23 +258,24 @@ function movieCard(movie) {
   slider.value = `${movie.vote_average}`;
   slider.className = "slider";
   sliderContainer.append(slider);
-
   slider.addEventListener("input", (e) => {
     ratingP.textContent = `${slider.value}/10`;
   });
   slider.addEventListener("change", (e) => {
-    updateRating(movie, e);
+    let newVoteMovie = movie;
+    newVoteMovie.vote_average = slider.value;
+    updateMovie(movie, e, newVoteMovie);
   });
 
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
   deleteButton.innerText = "☓";
   h3.textContent = movie.original_title;
-  dateP.textContent = movie.dateAdded;
+  dateP.textContent = `Added: ${movie.dateAdded}`;
   ratingP.textContent = `${movie.vote_average}/10`;
   watchedP.innerText = "Watched?";
 
-  movieInfoDiv.append(h3, dateP, ratingP, watchedP, watched);
+  movieInfoDiv.append(dateP, h3, watchedP, watched, ratingP);
 
   movieDiv.append(deleteButton, img, movieInfoDiv);
   if (!checkbox.checked) {
@@ -277,6 +290,13 @@ function movieCard(movie) {
     deleteMovie(movie, e);
     e.target.parentNode.remove();
   });
+  if (movie.id === 11031) {
+    slider.max = "11";
+    ratingP.textContent = `${slider.value}/11`;
+    slider.addEventListener("input", (e) => {
+      ratingP.textContent = `${slider.value}/11`;
+    });
+  }
 }
 
 const mainTitle = document.querySelector("#main-title");
@@ -284,16 +304,3 @@ const mainTitle = document.querySelector("#main-title");
 mainTitle.addEventListener("click", () => {
   window.location.reload();
 });
-
-function updateWatched(movie, e) {
-  let checkedMovie = movie;
-  checkedMovie.watched = !e.target.checked;
-  fetch(`http://localhost:3000/profile/${logInID}`)
-    .then((res) => res.json())
-    .then((json) => {
-      const list = json.myList;
-      let index = list.map((item) => item.id).indexOf(movie.id);
-      list.splice(index, 1, checkedMovie);
-      patchList(list);
-    });
-}
