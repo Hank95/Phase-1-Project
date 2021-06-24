@@ -32,6 +32,9 @@ function renderMovie(movie) {
   divImage.className = "image";
   const image = document.createElement("img");
   image.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
+  if (movie.poster_path === null) {
+    image.src = "./images/notFoundPic.jpg";
+  }
   divImage.append(image);
   const divDetails = document.createElement("div");
   divDetails.className = "details";
