@@ -215,6 +215,8 @@ function movieCard(movie) {
   const watchedP = document.createElement("p");
   const watched = document.createElement("div");
   watched.className = "button b2 button-10";
+
+  // Watched switch
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.className = "checkbox";
@@ -227,11 +229,29 @@ function movieCard(movie) {
   knobs.append(yesSpan);
   const layerDiv = document.createElement("div");
   layerDiv.className = "layer";
-
   watched.append(checkbox, knobs, layerDiv);
-
   checkbox.addEventListener("change", (e) => {
     updateWatched(movie, e);
+    if (!e.target.checked) {
+      movieDiv.append(sliderContainer);
+    } else sliderContainer.remove();
+  });
+
+  // Rating Slider
+  const sliderContainer = document.createElement("div");
+  const slider = document.createElement("input");
+  slider.type = "range";
+  slider.min = "1";
+  slider.max = "10";
+  slider.value = `${movie.vote_average}`;
+  slider.className = "slider";
+  sliderContainer.append(slider);
+
+  slider.addEventListener("input", (e) => {
+    ratingP.textContent = `${slider.value}/10`;
+  });
+  slider.addEventListener("change", (e) => {
+    updateRating(movie, e);
   });
 
   const deleteButton = document.createElement("a");
@@ -245,6 +265,9 @@ function movieCard(movie) {
   movieInfoDiv.append(h3, dateP, ratingP, watchedP, watched);
 
   movieDiv.append(deleteButton, img, movieInfoDiv);
+  if (!checkbox.checked) {
+    movieDiv.append(sliderContainer);
+  }
 
   listContainer.append(movieDiv);
 

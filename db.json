@@ -62,7 +62,7 @@
           "vote_average": 7,
           "vote_count": 4780,
           "dateAdded": "6/24/2021",
-          "watched": false
+          "watched": true
         },
         {
           "adult": false,
@@ -146,7 +146,7 @@
           "vote_average": 8.5,
           "vote_count": 3183,
           "dateAdded": "6/24/2021",
-          "watched": false
+          "watched": true
         },
         {
           "adult": false,
