@@ -6,9 +6,11 @@ let logInID = 1;
 //   .then((res) => res.json())
 //   .then((json) => console.log(json));
 
-// fetch(`https://api.themoviedb.org/3/movie/744?api_key=${API_KEY}`)
-//   .then((res) => res.json())
-//   .then((json) => console.log(json));
+fetch(
+  `https://api.themoviedb.org/3/movie/2280/credits?api_key=${API_KEY}&language=en-US`
+)
+  .then((res) => res.json())
+  .then((json) => console.log(json));
 
 function findMovie(movie) {
   fetch(
@@ -16,13 +18,14 @@ function findMovie(movie) {
   )
     .then((res) => res.json())
     .then((json) => {
-      console.log(json);
+      // console.log(json);
       json.results.forEach((movie) => renderMovie(movie));
     });
 }
 const content = document.querySelector("#content");
 
 function renderMovie(movie) {
+  // console.log(movie);
   const container = document.createElement("div");
   container.className = "container";
   const divImage = document.createElement("div");
@@ -71,28 +74,14 @@ function renderMovie(movie) {
   actionDiv.append(listButtonDiv, ratingDiv);
   container.append(divImage, divDetails, actionDiv);
 
-  if (movie.poster_path) {
-    image.src = `https://image.tmdb.org/t/p/w200${movie.poster_path}`;
-  } else if (movie.poster_path === null) {
-    image.src = "./images/notFoundPic.jpg";
-  }
-
   content.append(container);
 
   listButton.addEventListener("click", (e) => {
     e.preventDefault();
     addToList(movie, e, logInID);
-    listButton.textContent = "Added!";
   });
 }
 
-function currentMovies() {
-  fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
-  )
-    .then((res) => res.json())
-    .then((json) => json.results.forEach((newMovie) => renderMovie(newMovie)));
-}
 function addToList(movie, e, logInID) {
   console.log(movie);
   console.log(e);
@@ -103,24 +92,31 @@ function addToList(movie, e, logInID) {
       const movieWDate = movie;
       let today = new Date().toLocaleDateString();
       movieWDate.dateAdded = today;
-      movieWDate.watched = false;
       console.log(movieWDate);
       list.push(movie);
-      patchList(list);
-    })
-    .then(e.preventDefault());
+      console.log(list);
+      fetch(`http://localhost:3000/profile/${logInID}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          myList: list,
+        }),
+      });
+    });
 }
 
-function deleteMovie(movie, e) {
-  console.log(movie);
-  fetch(`http://localhost:3000/profile/${logInID}`)
+function currentMovies() {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+  )
     .then((res) => res.json())
-    .then((json) => {
-      const list = json.myList;
-      let removeIndex = list.map((item) => item.id).indexOf(movie.id);
-      list.splice(removeIndex, 1);
-      patchList(list);
-    });
+    .then((json) =>
+      json.results.forEach((newMovie) => {
+        renderMovie(newMovie);
+      })
+    );
 }
 function updateMovie(movie, e, update) {
   fetch(`http://localhost:3000/profile/${logInID}`)
@@ -133,6 +129,40 @@ function updateMovie(movie, e, update) {
     });
 }
 
+// Upcoming movies
+// function upcomingMovies() {
+//   fetch(
+//     `https://api.themoviedb.org/3/movie/744/recommendations?api_key=${API_KEY}&language=en-US&page=1`
+//   )
+//     .then((res) => res.json())
+//     .then(console.log)
+
+// }
+// upcomingMovies()
+
+// function getCast() {
+//   fetch(
+//     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+//   )
+//     .then((res) => res.json())
+//     .then((json) => json.results.forEach((newMovie) => {
+
+//       const newMovieID = newMovie.id
+
+//       fetch(`https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`)
+//       .then((res) => res.json())
+//       .then((json) => json.cast.forEach(filmCast => {
+
+// console.log(filmCast)
+//       })
+
+//     );
+// }))
+// }
+
+// getCast()
+
+///
 function patchList(list) {
   fetch(`http://localhost:3000/profile/${logInID}`, {
     method: "PATCH",
@@ -171,6 +201,8 @@ searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   content.innerHTML = "";
   listContainer.innerHTML = "";
+
+  console.log(e.target.search.value);
   findMovie(e.target.search.value);
 });
 
@@ -184,7 +216,7 @@ current.addEventListener("click", () => {
   title.innerHTML = "";
 
   const currentTitle = document.createElement("h2");
-  currentTitle.innerText = "Popular";
+  currentTitle.innerText = "POPULAR";
   title.append(currentTitle);
 
   currentMovies();
@@ -196,14 +228,13 @@ theList.addEventListener("click", (e) => {
   title.innerHTML = "";
   renderMyList(logInID);
 });
-
 document.addEventListener("DOMContentLoaded", (e) => {
   currentMovies();
 });
 
 function renderMyList(logInID) {
   const myListTitle = document.createElement("h2");
-  myListTitle.innerText = "My List";
+  myListTitle.innerText = "MY LIST";
   title.append(myListTitle);
   fetch(`http://localhost:3000/profile/${logInID}`)
     .then((res) => res.json())
@@ -269,11 +300,11 @@ function movieCard(movie) {
 
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
-  deleteButton.innerText = "☓";
+  deleteButton.innerText = "X";
   h3.textContent = movie.original_title;
   dateP.textContent = `Added: ${movie.dateAdded}`;
   ratingP.textContent = `${movie.vote_average}/10`;
-  watchedP.innerText = "Watched?";
+  watchedP.textContent = "Watched: yes/no";
 
   movieInfoDiv.append(dateP, h3, watchedP, watched, ratingP);
 
@@ -303,4 +334,23 @@ const mainTitle = document.querySelector("#main-title");
 
 mainTitle.addEventListener("click", () => {
   window.location.reload();
+});
+
+// about section
+const aboutBtn = document.getElementById("about");
+
+aboutBtn.addEventListener("click", () => {
+  content.innerHTML = "";
+
+  const aboutTitle = document.querySelector("div#title h2");
+  aboutTitle.innerText = "ABOUT";
+
+  const aboutP = document.getElementById("about-section");
+  aboutP.removeAttribute("hidden");
+
+  const tmdbImage = document.createElement("img");
+  tmdbImage.id = "tmdb-logo";
+  tmdbImage.src = "./images/TMDB_logo.svg";
+
+  content.append(aboutP, tmdbImage);
 });
