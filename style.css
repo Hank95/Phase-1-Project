@@ -201,7 +201,7 @@ textarea {
   margin-left: 20%;
   border-bottom: rgb(255, 94, 0);
   border-style: solid;
-  border-width: 0px 0px .5px 0px;
+  border-width: 0px 0px 0.5px 0px;
 }
 
 aside {
@@ -229,11 +229,17 @@ aside {
 .movie-div {
   width: 200px;
   align-items: center;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  text-align: center;
+  /* box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06); */
+  /* text-align: center; */
   margin: 2rem;
   z-index: 2;
   position: relative;
+}
+.movie-div:hover {
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+.movie-info {
+  margin-left: 1rem;
 }
 
 /* myList Delete button */
@@ -255,6 +261,12 @@ aside {
 .movie-div:hover .close {
   color: rgb(0, 0, 0);
   opacity: 1;
+}
+.ratingP {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 3px;
+  border-radius: 3px;
 }
 
 /* Watch button css */
@@ -363,4 +375,94 @@ aside {
   padding-bottom: 50pt;
   width: 500px;
   float: right;
+}
+
+/* slider style */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #b9b1b1;
+  background: #f0f0f0;
+  border-radius: 50px;
+  border: 0px solid #000000;
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px #4d4b4b;
+  border: 0px solid #000000;
+  height: 16px;
+  width: 32px;
+  border-radius: 50px;
+  background: #5353d1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #f0f0f0;
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #b9b1b1;
+  background: #f0f0f0;
+  border-radius: 50px;
+  border: 0px solid #000000;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #4d4b4b;
+  border: 0px solid #000000;
+  height: 16px;
+  width: 32px;
+  border-radius: 50px;
+  background: #5353d1;
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 16px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: #f0f0f0;
+  border: 0px solid #000000;
+  border-radius: 100px;
+  box-shadow: 0px 0px 0px #b9b1b1;
+}
+input[type="range"]::-ms-fill-upper {
+  background: #f0f0f0;
+  border: 0px solid #000000;
+  border-radius: 100px;
+  box-shadow: 0px 0px 0px #b9b1b1;
+}
+input[type="range"]::-ms-thumb {
+  box-shadow: 0px 0px 1px #4d4b4b;
+  border: 0px solid #000000;
+  height: 16px;
+  width: 32px;
+  border-radius: 50px;
+  background: #5353d1;
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: #f0f0f0;
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: #f0f0f0;
 }

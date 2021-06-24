@@ -36,7 +36,7 @@
           "release_date": "1986-05-16",
           "title": "Top Gun",
           "video": false,
-          "vote_average": 7,
+          "vote_average": "5",
           "vote_count": 4780,
           "dateAdded": "6/24/2021",
           "watched": true
@@ -57,7 +57,7 @@
           "release_date": "2021-11-17",
           "title": "Top Gun: Maverick",
           "video": false,
-          "vote_average": 0,
+          "vote_average": "10",
           "vote_count": 0,
           "dateAdded": "6/24/2021",
           "watched": false
@@ -78,10 +78,10 @@
           "release_date": "1998-03-06",
           "title": "The Big Lebowski",
           "video": false,
-          "vote_average": 7.9,
+          "vote_average": "5",
           "vote_count": 8424,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
@@ -99,10 +99,10 @@
           "release_date": "2021-05-26",
           "title": "Cruella",
           "video": false,
-          "vote_average": 8.5,
+          "vote_average": "8",
           "vote_count": 3183,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
@@ -121,10 +121,10 @@
           "release_date": "2021-05-25",
           "title": "The Conjuring: The Devil Made Me Do It",
           "video": false,
-          "vote_average": 8.1,
+          "vote_average": "4",
           "vote_count": 2488,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
@@ -143,7 +143,7 @@
           "release_date": "2021-09-08",
           "title": "Infinite",
           "video": false,
-          "vote_average": 0,
+          "vote_average": "6",
           "vote_count": 0,
           "dateAdded": "6/24/2021",
           "watched": true
@@ -189,10 +189,10 @@
           "release_date": "2020-10-16",
           "title": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train",
           "video": false,
-          "vote_average": 8.4,
+          "vote_average": "1",
           "vote_count": 1246,
           "dateAdded": "6/24/2021",
-          "watched": false
+          "watched": true
         },
         {
           "adult": false,
@@ -341,10 +341,71 @@
           "release_date": "1984-05-04",
           "title": "This Is Spinal Tap",
           "video": false,
-          "vote_average": "8",
+          "vote_average": "1",
           "vote_count": 985,
           "dateAdded": "6/24/2021",
           "watched": true
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/9yBVqNruk6Ykrwc32qrK2TIE5xw.jpg",
+          "genre_ids": [
+            28,
+            14,
+            12
+          ],
+          "id": 460465,
+          "original_language": "en",
+          "original_title": "Mortal Kombat",
+          "overview": "Washed-up MMA fighter Cole Young, unaware of his heritage, and hunted by Emperor Shang Tsung's best warrior, Sub-Zero, seeks out and trains with Earth's greatest champions as he prepares to stand against the enemies of Outworld in a high stakes battle for the universe.",
+          "popularity": 1094.922,
+          "poster_path": "/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg",
+          "release_date": "2021-04-07",
+          "title": "Mortal Kombat",
+          "video": false,
+          "vote_average": 7.5,
+          "vote_count": 3084,
+          "dateAdded": "6/24/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg",
+          "genre_ids": [
+            14,
+            12,
+            28
+          ],
+          "id": 399566,
+          "original_language": "en",
+          "original_title": "Godzilla vs. Kong",
+          "overview": "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
+          "popularity": 988.686,
+          "poster_path": "/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+          "release_date": "2021-03-24",
+          "title": "Godzilla vs. Kong",
+          "video": false,
+          "vote_average": 8,
+          "vote_count": 6117,
+          "dateAdded": "6/24/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/jw6ASGRT2gi8EjCImpGtbiJ9NQ9.jpg",
+          "genre_ids": [
+            27
+          ],
+          "id": 632357,
+          "original_language": "en",
+          "original_title": "The Unholy",
+          "overview": "Alice, a young hearing-impaired girl who, after a supposed visitation from the Virgin Mary, is inexplicably able to hear, speak and heal the sick. As word spreads and people from near and far flock to witness her miracles, a disgraced journalist hoping to revive his career visits the small New England town to investigate. When terrifying events begin to happen all around, he starts to question if these phenomena are the works of the Virgin Mary or something much more sinister.",
+          "popularity": 855.292,
+          "poster_path": "/bShgiEQoPnWdw4LBrYT5u18JF34.jpg",
+          "release_date": "2021-03-31",
+          "title": "The Unholy",
+          "video": false,
+          "vote_average": 7,
+          "vote_count": 1023,
+          "dateAdded": "6/24/2021"
         }
       ]
     }
