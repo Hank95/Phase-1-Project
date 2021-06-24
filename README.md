@@ -6,6 +6,7 @@ For the full experience:
 Run:
 
 npm install -g json-server
+
 json-server --watch db.json
 
 Welcome to the Movie List
