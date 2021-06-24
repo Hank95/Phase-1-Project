@@ -38,7 +38,15 @@ function renderMovie(movie) {
   movieDescription.textContent = "Description:";
   const movieDescriptionContent = document.createElement("p");
   movieDescriptionContent.textContent = movie.overview;
-  divDetails.append(movieTitle, movieDescription, movieDescriptionContent);
+  const releaseDate = document.createElement("h4");
+  releaseDate.className = "release-date";
+  releaseDate.innerText = `Released: ${movie.release_date}`;
+  divDetails.append(
+    movieTitle,
+    movieDescription,
+    movieDescriptionContent,
+    releaseDate
+  );
   const actionDiv = document.createElement("div");
   actionDiv.className = "action-div";
   const listButtonDiv = document.createElement("div");

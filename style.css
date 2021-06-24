@@ -90,6 +90,9 @@ h1 {
 .details {
   margin: 1.5rem;
 }
+.release-date {
+  margin-top: 1rem;
+}
 .action-div {
   position: absolute;
   width: 100%;
