@@ -36,7 +36,7 @@
           "release_date": "1986-05-16",
           "title": "Top Gun",
           "video": false,
-          "vote_average": "10",
+          "vote_average": "9",
           "vote_count": 4780,
           "dateAdded": "6/24/2021",
           "watched": true
@@ -57,7 +57,7 @@
           "release_date": "2021-11-17",
           "title": "Top Gun: Maverick",
           "video": false,
-          "vote_average": "1",
+          "vote_average": "7",
           "vote_count": 0,
           "dateAdded": "6/24/2021",
           "watched": true
@@ -99,10 +99,10 @@
           "release_date": "2021-05-26",
           "title": "Cruella",
           "video": false,
-          "vote_average": "8",
+          "vote_average": 8.5,
           "vote_count": 3183,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
@@ -143,10 +143,10 @@
           "release_date": "2021-09-08",
           "title": "Infinite",
           "video": false,
-          "vote_average": "6",
+          "vote_average": 0,
           "vote_count": 0,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
