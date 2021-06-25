@@ -121,6 +121,17 @@ function currentMovies() {
       })
     );
 }
+function deleteMovie(movie, e) {
+  console.log(movie);
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let removeIndex = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(removeIndex, 1);
+      patchList(list);
+    });
+}
 function updateMovie(movie, e, update) {
   fetch(`http://localhost:3000/profile/${logInID}`)
     .then((res) => res.json())
@@ -275,17 +286,19 @@ function movieCard(movie) {
     updateMovie(movie, e, newVoteMovie);
   });
 
+  let sliderNum = slider.value;
+
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
   deleteButton.innerText = "X";
   h3.textContent = movie.original_title;
   dateP.textContent = `Added: ${movie.dateAdded}`;
   ratingP.textContent = `${movie.vote_average}/10`;
-  watchedP.textContent = "Watched: yes/no";
+  ratingP.className = "ratingP";
+  watchedP.textContent = "Seen it?";
+  movieInfoDiv.append(dateP, h3, watchedP);
 
-  movieInfoDiv.append(dateP, h3, watchedP, watched, ratingP);
-
-  movieDiv.append(deleteButton, img, movieInfoDiv);
+  movieDiv.append(deleteButton, img, movieInfoDiv, watched, ratingP);
   if (!checkbox.checked) {
     movieDiv.append(sliderContainer);
   }

@@ -9,6 +9,12 @@ npm install -g json-server
 
 json-server --watch db.json
 
+To login:
+
+Username: movieLover
+
+Password: 5dd59b3fb5f3ddffe05ee3a3306f88ff
+
 Welcome to the Movie List
 
 THE place to search and find the movies you like! Feel free to look through the Popular section for new releases or use the search to find the movies by title.
