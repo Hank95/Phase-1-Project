@@ -15,6 +15,19 @@ let userNom;
 //   .then((res) => res.json())
 //   .then((json) => console.log(json));
 
+//
+const listContainer = document.querySelector("#list-container");
+const content = document.querySelector("#content");
+const searchForm = document.querySelector("#search-form");
+const theList = document.querySelector("#the-list");
+const current = document.querySelector("#current");
+const title = document.querySelector("#title");
+const mainTitle = document.querySelector("#main-title");
+const randomSection = document.getElementById("random-section");
+const aboutBtn = document.getElementById("about");
+const aboutSection = document.querySelector("#about-section");
+const randomizerBtn = document.getElementById("random-button");
+
 function findMovie(movie) {
   fetch(
     `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movie}&sort_by=popularity.desc`
@@ -25,7 +38,6 @@ function findMovie(movie) {
       json.results.forEach((movie) => renderMovie(movie));
     });
 }
-const content = document.querySelector("#content");
 
 function renderMovie(movie) {
   // console.log(movie);
@@ -88,152 +100,6 @@ function renderMovie(movie) {
     addToList(movie, e, logInID);
   });
 }
-
-function addToList(movie, e, logInID) {
-  console.log(movie);
-  console.log(e);
-  fetch(`http://localhost:3000/profile/${logInID}`)
-    .then((res) => res.json())
-    .then((json) => {
-      const list = json.myList;
-      const movieWDate = movie;
-      let today = new Date().toLocaleDateString();
-      movieWDate.dateAdded = today;
-      console.log(movieWDate);
-      list.push(movie);
-      console.log(list);
-      fetch(`http://localhost:3000/profile/${logInID}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          myList: list,
-        }),
-      });
-    });
-}
-
-function currentMovies() {
-  fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
-  )
-    .then((res) => res.json())
-    .then((json) =>
-      json.results.forEach((newMovie) => {
-        renderMovie(newMovie);
-      })
-    );
-}
-function deleteMovie(movie, e) {
-  console.log(movie);
-  fetch(`http://localhost:3000/profile/${logInID}`)
-    .then((res) => res.json())
-    .then((json) => {
-      const list = json.myList;
-      let removeIndex = list.map((item) => item.id).indexOf(movie.id);
-      list.splice(removeIndex, 1);
-      patchList(list);
-    });
-}
-function updateMovie(movie, e, update) {
-  fetch(`http://localhost:3000/profile/${logInID}`)
-    .then((res) => res.json())
-    .then((json) => {
-      const list = json.myList;
-      let index = list.map((item) => item.id).indexOf(movie.id);
-      list.splice(index, 1, update);
-      patchList(list);
-    });
-}
-
-//
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-
-function randomMovies() {
-  const randomNum = getRandomInt(500);
-  const randomElement = getRandomInt(20);
-
-  fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&page=${randomNum}`
-  )
-    .then((res) => res.json())
-    .then((json) => {
-      const featuredFilm = json.results[`${randomElement}`];
-      renderMovie(featuredFilm);
-    });
-}
-
-// randomMovies()
-
-///
-function patchList(list) {
-  fetch(`http://localhost:3000/profile/${logInID}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      myList: list,
-    }),
-  });
-}
-
-const searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  content.innerHTML = "";
-  listContainer.innerHTML = "";
-  aboutSection.className = "hidden";
-  randomSection.classList.add("hidden");
-
-  console.log(e.target.search.value);
-  findMovie(e.target.search.value);
-});
-
-const theList = document.querySelector("#the-list");
-
-const current = document.querySelector("#current");
-const title = document.querySelector("#title");
-
-current.addEventListener("click", () => {
-  content.innerHTML = "";
-  listContainer.innerHTML = "";
-  title.innerHTML = "";
-  aboutSection.className = "hidden";
-  randomSection.className = "hidden";
-
-  const currentTitle = document.createElement("h2");
-  currentTitle.innerText = "POPULAR";
-  title.append(currentTitle);
-
-  currentMovies();
-});
-
-theList.addEventListener("click", (e) => {
-  content.innerHTML = "";
-  listContainer.innerHTML = "";
-  title.innerHTML = "";
-  aboutSection.className = "hidden";
-  randomSection.className = "hidden";
-  renderMyList(logInID);
-});
-document.addEventListener("DOMContentLoaded", (e) => {
-  renderRandom();
-});
-
-function renderMyList(logInID) {
-  const myListTitle = document.createElement("h2");
-  myListTitle.innerText = "MY LIST";
-  title.append(myListTitle);
-  fetch(`http://localhost:3000/profile/${logInID}`)
-    .then((res) => res.json())
-    .then((json) => json.myList.forEach((movie) => movieCard(movie)));
-}
-
-const listContainer = document.querySelector("#list-container");
 function movieCard(movie) {
   const movieDiv = document.createElement("div");
   movieDiv.className = "movie-div";
@@ -322,9 +188,144 @@ function movieCard(movie) {
   }
 }
 
-const mainTitle = document.querySelector("#main-title");
+function addToList(movie, e, logInID) {
+  console.log(movie);
+  console.log(e);
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      const movieWDate = movie;
+      let today = new Date().toLocaleDateString();
+      movieWDate.dateAdded = today;
+      console.log(movieWDate);
+      list.push(movie);
+      console.log(list);
+      fetch(`http://localhost:3000/profile/${logInID}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          myList: list,
+        }),
+      });
+    });
+}
 
-//////////watch list title button event
+function currentMovies() {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
+  )
+    .then((res) => res.json())
+    .then((json) =>
+      json.results.forEach((newMovie) => {
+        renderMovie(newMovie);
+      })
+    );
+}
+function deleteMovie(movie, e) {
+  console.log(movie);
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let removeIndex = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(removeIndex, 1);
+      patchList(list);
+    });
+}
+function updateMovie(movie, e, update) {
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => {
+      const list = json.myList;
+      let index = list.map((item) => item.id).indexOf(movie.id);
+      list.splice(index, 1, update);
+      patchList(list);
+    });
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+function randomMovies() {
+  const randomNum = getRandomInt(500);
+  const randomElement = getRandomInt(20);
+
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&page=${randomNum}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      const featuredFilm = json.results[`${randomElement}`];
+      renderMovie(featuredFilm);
+    });
+}
+
+function patchList(list) {
+  fetch(`http://localhost:3000/profile/${logInID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      myList: list,
+    }),
+  });
+}
+
+function renderMyList(logInID) {
+  const myListTitle = document.createElement("h2");
+  myListTitle.innerText = "MY LIST";
+  title.append(myListTitle);
+  fetch(`http://localhost:3000/profile/${logInID}`)
+    .then((res) => res.json())
+    .then((json) => json.myList.forEach((movie) => movieCard(movie)));
+}
+function renderRandom() {
+  randomSection.classList.remove("hidden");
+  randomMovies();
+}
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  content.innerHTML = "";
+  listContainer.innerHTML = "";
+  aboutSection.className = "hidden";
+  randomSection.classList.add("hidden");
+
+  console.log(e.target.search.value);
+  findMovie(e.target.search.value);
+});
+
+current.addEventListener("click", () => {
+  content.innerHTML = "";
+  listContainer.innerHTML = "";
+  title.innerHTML = "";
+  aboutSection.className = "hidden";
+  randomSection.className = "hidden";
+
+  const currentTitle = document.createElement("h2");
+  currentTitle.innerText = "POPULAR";
+  title.append(currentTitle);
+
+  currentMovies();
+});
+
+theList.addEventListener("click", (e) => {
+  content.innerHTML = "";
+  listContainer.innerHTML = "";
+  title.innerHTML = "";
+  aboutSection.className = "hidden";
+  randomSection.className = "hidden";
+  renderMyList(logInID);
+});
+document.addEventListener("DOMContentLoaded", (e) => {
+  renderRandom();
+});
+
 mainTitle.addEventListener("click", () => {
   // window.location.reload();
   content.innerHTML = "";
@@ -336,14 +337,6 @@ mainTitle.addEventListener("click", () => {
 
   renderRandom();
 });
-const randomSection = document.getElementById("random-section");
-
-function renderRandom() {
-  randomSection.classList.remove("hidden");
-  randomMovies();
-}
-
-const randomizerBtn = document.getElementById("random-button");
 
 randomizerBtn.addEventListener("click", () => {
   // window.location.reload();
@@ -352,9 +345,6 @@ randomizerBtn.addEventListener("click", () => {
 });
 
 // about section
-const aboutBtn = document.getElementById("about");
-
-const aboutSection = document.querySelector("#about-section");
 aboutBtn.addEventListener("click", () => {
   content.innerHTML = "";
   title.innerHTML = "";
@@ -366,9 +356,8 @@ aboutBtn.addEventListener("click", () => {
   randomSection.className = "hidden";
 });
 
+// /// My List yes/no switches
 const switchers = [...document.querySelectorAll(".switcher")];
-
-// Login auth
 switchers.forEach((item) => {
   item.addEventListener("click", function () {
     switchers.forEach((item) =>
@@ -378,6 +367,7 @@ switchers.forEach((item) => {
   });
 });
 
+// Login Functionality, its a mess
 const formLogIn = document.querySelector(".form-login");
 const formSignUp = document.querySelector(".form-signup");
 const logInEmail = document.querySelector("#login-email");
