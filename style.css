@@ -48,8 +48,10 @@ h1 {
 }
 #search-form {
   padding: 10px;
-  padding-right: 30pt;
   border: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   /* box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06); */
 }
 .my-list {
@@ -80,11 +82,6 @@ h1 {
   margin-right: 10%;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  position: relative;
-}
 .image {
   object-fit: fill;
 }
@@ -109,6 +106,14 @@ h1 {
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
+#logOut-div {
+  position: absolute;
+  bottom: 20px;
+  justify-content: center;
+  text-align: center;
+  width: 75%;
+  margin-left: 12.5%;
+}
 .ratingDiv {
   display: flex;
   justify-content: center;
@@ -131,12 +136,7 @@ h1 {
   background-color: rgb(241, 114, 110);
 }
 /* form */
-#comment {
-  padding: 10px;
-  border: 0;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  width: 75%;
-}
+
 #submit,
 button {
   /* remove default behavior */
@@ -178,30 +178,26 @@ textarea {
   font-family: inherit;
   font-size: inherit;
 }
-.comments-list {
-  font-size: 1.5rem;
-  justify-content: center;
-  width: 50%;
-  margin-left: 25%;
-}
-.comments-list li {
-  margin-bottom: 0.75rem;
-}
 
 .hidden {
   display: none;
 }
 
-/* div button#the-list {
-} */
-
 .container {
   background-color: white;
   max-width: 80%;
-  margin-left: 20%;
-  border-bottom: rgb(255, 94, 0);
-  border-style: solid;
-  border-width: 0px 0px 0.5px 0px;
+  margin-left: 23%;
+  margin-bottom: 1rem;
+  /* border-bottom: rgb(255, 94, 0);
+  border-style: solid; */
+  /* border-width: 0px 0px 0.5px 0px; */
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  position: relative;
+}
+.container:hover {
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
 }
 
 aside {
@@ -221,9 +217,15 @@ aside {
 /* My List Styling */
 #list-container {
   display: grid;
-  margin-left: 20%;
+  margin-left: 22%;
   width: 80%;
   grid-template-columns: 1fr 1fr 1fr;
+}
+@media only screen and (max-width: 1200px) {
+  #list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .movie-div {
@@ -404,7 +406,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 16px;
   cursor: pointer;
-  animate: 0.2s;
+  /* animate: 0.2s; */
   box-shadow: 0px 0px 0px #b9b1b1;
   background: #f0f0f0;
   border-radius: 50px;
@@ -428,7 +430,7 @@ input[type="range"]::-moz-range-track {
   width: 100%;
   height: 16px;
   cursor: pointer;
-  animate: 0.2s;
+  /* animate: 0.2s; */
   box-shadow: 0px 0px 0px #b9b1b1;
   background: #f0f0f0;
   border-radius: 50px;
@@ -447,7 +449,7 @@ input[type="range"]::-ms-track {
   width: 100%;
   height: 16px;
   cursor: pointer;
-  animate: 0.2s;
+  /* animate: 0.2s; */
   background: transparent;
   border-color: transparent;
   color: transparent;
