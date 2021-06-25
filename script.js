@@ -1,21 +1,23 @@
 let API_KEY;
 let logInID;
 let userNom;
+
+// // API search examples
 // fetch(
 //   `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&primary_release_year=2021&sort_by=popularity.desc`
 // )
 //   .then((res) => res.json())
 //   .then((json) => console.log(json));
 
-fetch(
-  `https://api.themoviedb.org/3/movie/2280/credits?api_key=${API_KEY}&language=en-US`
-)
-  .then((res) => res.json())
-  .then((json) => console.log(json));
+// fetch(
+//   `https://api.themoviedb.org/3/movie/2280/credits?api_key=${API_KEY}&language=en-US`
+// )
+//   .then((res) => res.json())
+//   .then((json) => console.log(json));
 
 function findMovie(movie) {
   fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movie}&sort_by=vote_average.desc`
+    `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movie}&sort_by=popularity.desc`
   )
     .then((res) => res.json())
     .then((json) => {
@@ -82,6 +84,7 @@ function renderMovie(movie) {
 
   listButton.addEventListener("click", (e) => {
     e.preventDefault();
+    listButton.textContent = "Added!";
     addToList(movie, e, logInID);
   });
 }
@@ -316,8 +319,6 @@ function movieCard(movie) {
     updateMovie(movie, e, newVoteMovie);
   });
 
-  let sliderNum = slider.value;
-
   const deleteButton = document.createElement("a");
   deleteButton.className = "close";
   deleteButton.innerText = "X";
@@ -414,7 +415,7 @@ formLogIn.addEventListener("submit", (e) => {
       console.error("Error:", error);
     });
 });
-
+let newUserID = 8;
 formSignUp.addEventListener("submit", (e) => {
   e.preventDefault();
   if (signUpPassword.value === signUpPasswordConfirm.value) {
@@ -429,7 +430,8 @@ formSignUp.addEventListener("submit", (e) => {
         myList: [],
       }),
     });
-    logInID = signUpEmail.value;
+    newUserID++;
+    logInID = newUserID;
     API_KEY = signUpPassword.value;
     userNom = signUpEmail.value;
 
@@ -447,5 +449,8 @@ function renderContent() {
   loginPage.classList.add("hidden");
   main.classList.remove("hidden");
   document.styleSheets[1].removeRule([0]);
+  const uname = document.createElement("h4");
+  uname.innerText = userNom;
+  logOut.append(uname);
   currentMovies();
 }

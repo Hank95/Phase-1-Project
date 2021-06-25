@@ -36,10 +36,10 @@
           "release_date": "1986-05-16",
           "title": "Top Gun",
           "video": false,
-          "vote_average": "5",
+          "vote_average": "10",
           "vote_count": 4780,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
@@ -60,7 +60,7 @@
           "vote_average": "10",
           "vote_count": 0,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
@@ -78,7 +78,7 @@
           "release_date": "1998-03-06",
           "title": "The Big Lebowski",
           "video": false,
-          "vote_average": "5",
+          "vote_average": "2",
           "vote_count": 8424,
           "dateAdded": "6/24/2021",
           "watched": false
@@ -241,28 +241,6 @@
         },
         {
           "adult": false,
-          "backdrop_path": "/z2UtGA1WggESspi6KOXeo66lvLx.jpg",
-          "genre_ids": [
-            878,
-            53,
-            27
-          ],
-          "id": 520763,
-          "original_language": "en",
-          "original_title": "A Quiet Place Part II",
-          "overview": "Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand path.",
-          "popularity": 3951.259,
-          "poster_path": "/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg",
-          "release_date": "2021-05-21",
-          "title": "A Quiet Place Part II",
-          "video": false,
-          "vote_average": 7.3,
-          "vote_count": 396,
-          "dateAdded": "6/24/2021",
-          "watched": false
-        },
-        {
-          "adult": false,
           "backdrop_path": "/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg",
           "genre_ids": [
             35,
@@ -341,10 +319,10 @@
           "release_date": "1984-05-04",
           "title": "This Is Spinal Tap",
           "video": false,
-          "vote_average": "1",
+          "vote_average": "11",
           "vote_count": 985,
           "dateAdded": "6/24/2021",
-          "watched": true
+          "watched": false
         },
         {
           "adult": false,
@@ -406,6 +384,95 @@
           "vote_average": 7,
           "vote_count": 1023,
           "dateAdded": "6/24/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/z2UtGA1WggESspi6KOXeo66lvLx.jpg",
+          "genre_ids": [
+            878,
+            53,
+            27
+          ],
+          "id": 520763,
+          "original_language": "en",
+          "original_title": "A Quiet Place Part II",
+          "overview": "Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand path.",
+          "popularity": 5213.474,
+          "poster_path": "/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg",
+          "release_date": "2021-05-21",
+          "title": "A Quiet Place Part II",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 437,
+          "dateAdded": "6/25/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/z2UtGA1WggESspi6KOXeo66lvLx.jpg",
+          "genre_ids": [
+            878,
+            53,
+            27
+          ],
+          "id": 520763,
+          "original_language": "en",
+          "original_title": "A Quiet Place Part II",
+          "overview": "Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand path.",
+          "popularity": 5213.474,
+          "poster_path": "/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg",
+          "release_date": "2021-05-21",
+          "title": "A Quiet Place Part II",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 437,
+          "dateAdded": "6/25/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/AglvRe4XNrV8livEMocj7jFkxtT.jpg",
+          "genre_ids": [
+            37,
+            16,
+            12,
+            35,
+            10751,
+            18
+          ],
+          "id": 9023,
+          "original_language": "en",
+          "original_title": "Spirit: Stallion of the Cimarron",
+          "overview": "As a wild stallion travels across the frontiers of the Old West, he befriends a young human and finds true love with a mare.",
+          "popularity": 85.386,
+          "poster_path": "/cUgYrz4twiJ3QgVGpRfey984NIB.jpg",
+          "release_date": "2002-05-24",
+          "title": "Spirit: Stallion of the Cimarron",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 3428,
+          "dateAdded": "6/25/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/m8hh2IQTFqLN2EMDDiAngf6UYY8.jpg",
+          "genre_ids": [
+            12,
+            16,
+            10751,
+            14,
+            10402
+          ],
+          "id": 10539,
+          "original_language": "en",
+          "original_title": "James and the Giant Peach",
+          "overview": "When the young orphan boy James spills a magic bag of crocodile tongues, he finds himself in possession of a giant peach that flies him away to strange lands.",
+          "popularity": 11.206,
+          "poster_path": "/hCcndEHrNcfkDGcGgqcVGBgcBCA.jpg",
+          "release_date": "1996-04-12",
+          "title": "James and the Giant Peach",
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 963,
+          "dateAdded": "6/25/2021"
         }
       ]
     },
@@ -456,6 +523,119 @@
       "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
       "myList": [],
       "id": 5
+    },
+    {
+      "userName": "hotFlix24",
+      "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
+      "myList": [],
+      "id": 6
+    },
+    {
+      "userName": "Henry",
+      "apiKey": "function updateMovie(movie, e, update) {   fetch(`http://localhost:3000/profile/${logInID}`)     .then((res) => res.json())     .then((json) => {       const list = json.myList;       let index = list.map((item) => item.id).indexOf(movie.id);       list.splice(index, 1, update);       patchList(list);     }); }",
+      "myList": [
+        {
+          "adult": false,
+          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            14
+          ],
+          "id": 508943,
+          "original_language": "en",
+          "original_title": "Luca",
+          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
+          "popularity": 6537.554,
+          "poster_path": "/7rhzEufovmmUqVjcbzMHTBQ2SCG.jpg",
+          "release_date": "2021-06-17",
+          "title": "Luca",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 1066,
+          "dateAdded": "6/25/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            14
+          ],
+          "id": 508943,
+          "original_language": "en",
+          "original_title": "Luca",
+          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
+          "popularity": 6537.554,
+          "poster_path": "/7rhzEufovmmUqVjcbzMHTBQ2SCG.jpg",
+          "release_date": "2021-06-17",
+          "title": "Luca",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 1066,
+          "dateAdded": "6/25/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/z2UtGA1WggESspi6KOXeo66lvLx.jpg",
+          "genre_ids": [
+            878,
+            53,
+            27
+          ],
+          "id": 520763,
+          "original_language": "en",
+          "original_title": "A Quiet Place Part II",
+          "overview": "Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize that the creatures that hunt by sound are not the only threats that lurk beyond the sand path.",
+          "popularity": 5213.474,
+          "poster_path": "/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg",
+          "release_date": "2021-05-21",
+          "title": "A Quiet Place Part II",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 437,
+          "dateAdded": "6/25/2021"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "userName": "hank",
+      "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
+      "myList": [],
+      "id": 8
+    },
+    {
+      "userName": "hp95",
+      "apiKey": "5dd59b3fb5f3ddffe05ee3a3306f88ff",
+      "myList": [
+        {
+          "adult": false,
+          "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            14
+          ],
+          "id": 508943,
+          "original_language": "en",
+          "original_title": "Luca",
+          "overview": "Luca and his best friend Alberto experience an unforgettable summer on the Italian Riviera. But all the fun is threatened by a deeply-held secret: they are sea monsters from another world just below the water’s surface.",
+          "popularity": 6537.554,
+          "poster_path": "/7rhzEufovmmUqVjcbzMHTBQ2SCG.jpg",
+          "release_date": "2021-06-17",
+          "title": "Luca",
+          "video": false,
+          "vote_average": 8.3,
+          "vote_count": 1066,
+          "dateAdded": "6/25/2021"
+        }
+      ],
+      "id": 9
     }
   ]
 }
