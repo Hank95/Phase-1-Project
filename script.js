@@ -187,6 +187,7 @@ searchForm.addEventListener("submit", (e) => {
   content.innerHTML = "";
   listContainer.innerHTML = "";
   aboutSection.className = "hidden";
+  randomSection.classList.add("hidden");
 
   console.log(e.target.search.value);
   findMovie(e.target.search.value);

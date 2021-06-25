@@ -493,6 +493,28 @@
           "vote_average": 6.6,
           "vote_count": 3830,
           "dateAdded": "6/25/2021"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/8VFea9nnOcHEYzBtfTDDKdPe7xj.jpg",
+          "genre_ids": [
+            18,
+            10751,
+            14,
+            12
+          ],
+          "id": 34584,
+          "original_language": "en",
+          "original_title": "Die unendliche Geschichte",
+          "overview": "While hiding from bullies in his school's attic, a young boy discovers the extraordinary land of Fantasia, through a magical book called The Neverending Story. The book tells the tale of Atreyu, a young warrior who, with the help of a luck dragon named Falkor, must save Fantasia from the destruction of The Nothing.",
+          "popularity": 41.608,
+          "poster_path": "/lWJC8om086h01f0CMGR9ombdpnI.jpg",
+          "release_date": "1984-04-05",
+          "title": "The NeverEnding Story",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 2947,
+          "dateAdded": "6/25/2021"
         }
       ]
     },
