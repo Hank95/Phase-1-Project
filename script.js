@@ -132,38 +132,27 @@ function updateMovie(movie, e, update) {
     });
 }
 
-// Upcoming movies
-// function upcomingMovies() {
-//   fetch(
-//     `https://api.themoviedb.org/3/movie/744/recommendations?api_key=${API_KEY}&language=en-US&page=1`
-//   )
-//     .then((res) => res.json())
-//     .then(console.log)
+//
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 
-// }
-// upcomingMovies()
+function randomMovies() {
+  const randomNum = getRandomInt(500)
+  const randomElement = getRandomInt(20)
 
-// function getCast() {
-//   fetch(
-//     `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`
-//   )
-//     .then((res) => res.json())
-//     .then((json) => json.results.forEach((newMovie) => {
+  fetch(
+    `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&page=${randomNum}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      const featuredFilm = json.results[`${randomElement}`]
+      renderMovie(featuredFilm)
+    })
+  }
 
-//       const newMovieID = newMovie.id
+  // randomMovies()
 
-//       fetch(`https://api.themoviedb.org/3/movie/${newMovieID}/credits?api_key=${API_KEY}&language=en-US`)
-//       .then((res) => res.json())
-//       .then((json) => json.cast.forEach(filmCast => {
-
-// console.log(filmCast)
-//       })
-
-//     );
-// }))
-// }
-
-// getCast()
 
 ///
 function patchList(list) {
@@ -193,11 +182,13 @@ const theList = document.querySelector("#the-list");
 
 const current = document.querySelector("#current");
 const title = document.querySelector("#title");
+
 current.addEventListener("click", () => {
   content.innerHTML = "";
   listContainer.innerHTML = "";
   title.innerHTML = "";
   aboutSection.className = "hidden";
+  randomSection.className = "hidden"
 
   const currentTitle = document.createElement("h2");
   currentTitle.innerText = "POPULAR";
@@ -211,10 +202,11 @@ theList.addEventListener("click", (e) => {
   listContainer.innerHTML = "";
   title.innerHTML = "";
   aboutSection.className = "hidden";
+  randomSection.className = "hidden"
   renderMyList(logInID);
 });
 document.addEventListener("DOMContentLoaded", (e) => {
-  currentMovies();
+  renderRandom();
 });
 
 function renderMyList(logInID) {
@@ -317,9 +309,33 @@ function movieCard(movie) {
 
 const mainTitle = document.querySelector("#main-title");
 
+
+//////////watch list title button event
 mainTitle.addEventListener("click", () => {
-  window.location.reload();
+  // window.location.reload();
+  content.innerHTML = "";
+  listContainer.innerHTML = "";
+  const landingTitle = document.querySelector('#title h2')
+  landingTitle.innerHTML = "WELCOME TO THE WATCH LIST!";
+  aboutSection.className = "hidden";
+  title.append(landingTitle)
+  
+  renderRandom()
+  
 });
+const randomSection = document.getElementById('random-section') 
+
+function renderRandom() {
+randomSection.classList.remove("hidden");
+randomMovies()
+}
+
+const randomizerBtn = document.getElementById('random-button')
+
+randomizerBtn.addEventListener('click', () => {
+  window.location.reload()
+})
+
 
 // about section
 const aboutBtn = document.getElementById("about");
@@ -329,18 +345,10 @@ aboutBtn.addEventListener("click", () => {
   content.innerHTML = "";
   title.innerHTML = "";
   listContainer.innerHTML = "";
-  aboutSection.classList.remove("hidden");
-
+  aboutSection.classList.remove("hidden"); 
   const aboutTitle = document.createElement("h2");
   aboutTitle.innerText = "ABOUT";
   title.append(aboutTitle);
+  randomSection.className = "hidden"
 
-  // const aboutP = document.getElementById("about-section");
-  // aboutP.classList.remove("hidden");
-
-  // const tmdbImage = document.createElement("img");
-  // tmdbImage.id = "tmdb-logo";
-  // tmdbImage.src = "./images/TMDB_logo.svg";
-
-  // content.append(aboutP, tmdbImage);
 });

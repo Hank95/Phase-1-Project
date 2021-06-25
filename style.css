@@ -206,7 +206,7 @@ textarea {
 
 aside {
   height: 100%;
-  width: 20%;
+  width: 15%;
   position: fixed;
   z-index: 1;
   top: 0%;
@@ -363,4 +363,18 @@ aside {
   padding-bottom: 50pt;
   width: 500px;
   float: right;
+}
+
+#random-section h1 {
+  text-align: left;
+  color: black;
+  padding-top: 5%;
+  padding-left: 20%;
+  padding-bottom: 5%;
+}
+
+#random-button {
+  width: 200px;
+  margin-left: 20%;
+  margin-bottom: 3%;
 }
