@@ -389,7 +389,8 @@ aside {
   width: 200px;
   margin-left: 20%;
   margin-bottom: 3%;
-/* slider style */
+  /* slider style */
+}
 
 input[type="range"] {
   -webkit-appearance: none;
